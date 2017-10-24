@@ -1,0 +1,46 @@
+/*
+ ============================================================================
+ Name        : Tree.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Tree {
+	int data;
+	struct Tree *leftChild;
+	struct Tree *rightChild;
+};
+
+struct Tree *root = NULL;
+
+void insert(int data) {
+	struct Tree *tempNode = (struct Tree) malloc(sizeof(struct Tree));
+	struct Tree *current = NULL;
+	struct Tree *parent = NULL;
+
+	tempNode->data = data;
+	tempNode->leftChild = NULL;
+	tempNode->rightChild = NULL;
+
+	if (root == NULL) {
+		root =  tempNode;
+	}else{
+
+	}
+}
+
+int main() {
+	int i;
+	int array[7] = { 27, 14, 35, 10, 19, 31, 42 };
+
+	for (i = 0; i < 7; i++)
+		insert(array[i]);
+
+	return 0;
+}

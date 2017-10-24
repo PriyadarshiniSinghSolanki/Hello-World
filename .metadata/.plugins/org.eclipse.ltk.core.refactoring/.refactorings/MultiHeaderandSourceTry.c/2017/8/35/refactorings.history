@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MultiHeaderandSourceTry.c/src/MultiHeaderandSourceTry.c.c&apos; to &apos;MultiHeaderandSourceTry.c&apos;" description="Rename resource &apos;MultiHeaderandSourceTry.c.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/MultiHeaderandSourceTry.c.c" name="MultiHeaderandSourceTry.c" stamp="1504165903705" updateReferences="true"/>
+</session>

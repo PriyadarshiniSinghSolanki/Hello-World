@@ -1,0 +1,14 @@
+14:58:46 **** Rebuild of configuration Debug for project Top 20 String Algorithm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Top 20 String Algorithm.o" "..\\src\\Top 20 String Algorithm.c" 
+..\src\Top 20 String Algorithm.c: In function 'main':
+..\src\Top 20 String Algorithm.c:435:13: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  int *str = "123456789";
+             ^
+..\src\Top 20 String Algorithm.c:435:7: warning: unused variable 'str' [-Wunused-variable]
+  int *str = "123456789";
+       ^
+gcc -o "Top 20 String Algorithm.exe" "src\\Top 20 String Algorithm.o" 
+
+14:58:46 Build Finished (took 424ms)
+

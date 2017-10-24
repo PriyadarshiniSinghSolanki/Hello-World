@@ -1,0 +1,72 @@
+/*
+ * Own_Str_Fun.c
+ *
+ *  Created on: 13-Jul-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char arr_str1[20], arr_str2[20], arr_str3[20];
+	int i = 0, j = 0, Cmpresult;
+
+	printf("Enter string 1:");
+	fflush( stdout);
+	scanf("%s", arr_str1);
+
+	printf("Enter string 2:");
+	fflush( stdout);
+	scanf("%s", arr_str2);
+
+	printf("Enter string 3:");
+	fflush( stdout);
+	scanf("%s", arr_str3);
+
+	// String Compare
+
+	if (strlen(arr_str1) == strlen(arr_str2)) {
+		for (i = 0; arr_str1[i] != '\0'; i++) {
+			if (arr_str1[i] == arr_str2[i])
+				Cmpresult = 1;
+			else
+				Cmpresult = 0;
+		}
+	} else
+		Cmpresult = 0;
+
+	if (Cmpresult == 0)
+		printf("String 1 and String 2 Mismatch\r\n");
+	else
+		printf("String 1 and String 2 Match\r\n");
+
+	//String Copy
+	arr_str1[20] = '\0';
+	i = 0;
+	if (arr_str2[i] != '\0') {
+		for (i = 0; i < (strlen(arr_str2)); i++) {
+			arr_str1[i] = arr_str2[i];
+		}
+		arr_str1[i] = '\0';
+	}
+	printf("String 1 after Copy: %s\r\n", arr_str1);
+
+	//Sting concatenate
+	if (arr_str3[j] != '\0') {
+		int len_str1 = strlen(arr_str1);
+		printf("len_str1: %d\r\n", len_str1);
+		int len_str3 = strlen(arr_str3);
+		printf("len_str3: %d\r\n", len_str3);
+
+		for (i = (len_str1), j = 0; i <= (len_str1 + len_str3); i++, j++) {
+			arr_str1[i] = arr_str3[j];
+		}
+		arr_str1[i] = '\0';
+		int k = strlen(arr_str1);
+		printf("strlen(arr_str1): %d\r\n", k);
+
+		printf("String 1 after concatenation: %s", arr_str1);
+	}
+	return 0;
+}

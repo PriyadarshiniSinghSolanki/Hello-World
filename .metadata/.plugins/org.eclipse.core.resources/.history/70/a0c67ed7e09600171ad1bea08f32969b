@@ -1,0 +1,282 @@
+/*
+ ============================================================================
+ Name        : Structure_Example.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style*/
+
+ /*Ques. 1 - Create a structure to specify data on students given below:
+ Roll number, Name, Department, Course, Year of joining
+ Assume that there are not more than 450 students in the college.
+ (a) Write a function to print names of all students who joined in a particular year.
+ (b) Write a function to print the data of a student whose roll number is given.*/
+#if 0
+struct Info {
+	int rollNumber;
+	char name[50];
+	char department[20];
+	char course[20];
+	int joiningYear;
+};
+int main(void) {
+	int from, to;
+	struct Info Student[450] = {
+			{1, "A", "ECE", "Engineering", 2008},
+			{2, "B", "CSE", "Diploma", 1999},
+			{3, "C", "ME", "Engineering", 2005},
+			{4, "D", "EEE",	"Engineering", 1990},
+			{5, "E", "ECE", "Engineering", 2008},
+			{6, "F", "CSE", "Diploma", 1999},
+			{7, "G", "ME", "Engineering", 2005},
+			{8, "H", "EEE",	"Engineering", 1990},
+			{9, "I", "ECE", "Engineering", 2005},
+			{10, "J", "CSE", "Diploma", 1999},
+			{11, "K", "ME", "Diploma", 2005},
+			{12, "L", "it",	"Engineering", 1990},
+			{13, "M", "ME", "Engineering", 2005},
+			{14, "N", "EEE",	"Diploma", 1990},
+			{15, "O", "ECE", "Engineering", 2008},
+			{16, "P", "CSE", "Diploma", 1999},
+			{17, "Q", "ME", "Engineering", 2005},
+			{18, "R", "me",	"Diploma", 1990},
+			{19, "S", "ECE", "Diploma", 2008},
+			{20, "T", "CSE", "Diploma", 1999},
+			{21, "U", "ME", "Engineering", 2005},
+			{22, "V", "EEE",	"Engineering", 1990},
+			{23, "W", "ME", "Engineering", 2005},
+			{24, "X", "EEE",	"Engineering", 2005},
+			{25, "Y", "ECE", "Diploma", 2008},
+			{26, "Z", "CSE", "Diploma", 1999},
+			{27, "AA", "ME", "Engineering", 2005},
+			{28, "BB", "EEE",	"Diploma", 2000},
+			{29, "CC", "ECE", "Engineering", 2008},
+			{30, "DD", "CSE", "Diploma", 1999},
+};
+	printf("which year student details required...?");
+	fflush(stdout);
+	scanf("%d", &from);
+	scanf("%d", &to);
+	fflush(stdout);
+	fflush(stdin);
+	int var, i;
+	for (var = 0; var < 450; ++var) {
+		if ((Student[var].joiningYear >= from)
+				&& (Student[var].joiningYear <= to)) {
+			printf("%s\r\n", Student[var].name);
+		}
+	}
+	fflush(stdout);
+
+	printf("roll number, whose details required.");
+	fflush(stdout);
+	scanf("%d", &i);
+	i--;
+	fflush(stdout);
+	fflush(stdin);
+	printf("%d\t%s\t%s\t%s\t%d",Student[i].rollNumber,Student[i].name,Student[i].department,Student[i].course,Student[i].joiningYear);
+
+	return 0;
+}
+#endif
+
+/* Ques. 2 - Create a structure to specify data of customers in a bank. The data to be stored is: Account number, Name, Balance in account.
+ Assume maximum of 200 customers in the bank.
+ (a) Write a function to print the Account number and name of each customer with balance below Rs. 100.
+ (b) If a customer request for withdrawal or deposit, it is given in the form:
+ Acct. no, amount, code (1 for deposit, 0 for withdrawal)
+ Write a program to give a message, “The balance is insufficient for the specified withdrawal”.*/
+ #if 0
+ int accountnumber, balance;
+	int choice, var;
+	struct Info Bank[200] = {
+			{1, "A", 2008},
+			{2, "B", 5},
+			{3, "C",  10},
+			{4, "D",  1990},
+			{5, "E",  20100},
+			{6, "F", 300},
+			{7, "G",  255},
+			{8, "H", 1990},
+			{9, "I",  66},
+			{10, "J", 590},
+			{11, "K", 2005},
+			{12, "L",457},
+			{13, "M", 345},
+			{14, "N", 257},
+			{15, "O", 975},
+			{16, "P", 678},
+			{17, "Q",  4567},
+			{18, "R", 1990},
+			{19, "S",  2008},
+			{20, "T", 77},
+			{21, "U",89},
+			{22, "V", 1990},
+			{23, "W",98},
+			{24, "X", 786},
+			{25, "Y",  55},
+			{26, "Z",  675},
+			{27, "AA",  2005},
+			{28, "BB", 2000},
+			{29, "CC", 2008},
+			{30, "DD",999},
+};
+	printf("%d", sizeof(struct Info));
+	fflush(stdout);
+	printf("Enter your choice:"
+			"1. get details about customer whose balance is below Rs. 100\r\n"
+			"2. for deposit/withdrawal\r\n");
+	fflush(stdout);
+	scanf("%d", &choice);
+	fflush(stdin);
+	switch (choice) {
+	case 1:
+		for (var = 0; var < 30; ++var) {
+			if (Bank[var].balance < 100) {
+				printf("%d\t%s\r\n", Bank[var].accountNumber, Bank[var].name);
+				fflush(stdout);
+			}
+		}
+
+		break;
+	case 2:
+		printf("enter accountnumber and ammount to withdraw");
+		fflush(stdout);
+		scanf("%d", &accountnumber);
+		scanf("%d", &balance);
+		fflush(stdin);
+		for (var = 0; var < 200; ++var) {
+			if (Bank[var].accountNumber == accountnumber) {
+				if (Bank[var].balance <= balance) {
+					printf(
+							"The balance is insufficient for the specified withdrawal");
+				} else
+					printf("withdrawal accepted");
+				fflush(stdout);
+			}
+		}
+		break;
+	default:
+		break;
+	}
+
+	return 0;
+#endif
+
+
+/* Ques. 3 - An automobile company has serial number for engine parts starting from AA0 to FF9.
+ The other characteristics of parts to be specified in a structure are: Year of manufacture, material and quantity manufactured.
+ (a) Specify a structure to store information corresponding to a part.
+ (b) Write a program to retrieve information on parts with serial numbers between BB1 and CC6.
+
+
+ Ques. 4 - A record contains name of cricketer, his age, number of test matches that he has played and the average runs that
+ he has scored in each test match. Create an array of structure to hold records of 20 such cricketer and then write a program to
+ read these records and arrange them in ascending order by average runs. Use the qsort( ) standard library function.
+
+ Ques. 5 - There is a structure called employee that holds information like employee code, name, date of joining.
+ Write a program to create an array of the structure and enter some data into it. Then ask the user to enter current date.
+ Display the names of those employees whose tenure is 3 or more than 3 years according to the given current date.
+
+ Ques. 6 - Write a menu driven program that depicts the working of a library. The menu options should be:
+ 1. Add book information
+ 2. Display book information
+ 3. List all books of given author
+ 4. List the title of specified book
+ 5. List the count of books in the library
+ 6. List the books in the order of accession number
+ 7. Exit
+ Create a structure called library to hold accession number, title of the book, author name, price of the book, and flag indicating
+ whether book is issued or not.
+
+
+ Ques. 7 - Write a program that compares two given dates. To store date use structure say date that contains three members namely date,
+ month and year. If the dates are equal then display message as "Equal" otherwise "Unequal".
+
+
+ Ques. 8 - Linked list is a very common data structure often used to store similar data in memory. While the elements of an array
+ occupy contiguous memory locations, those of a linked list are not constrained to be stored in adjacent location.
+ The individual elements are stored “somewhere” in memory, rather like a family dispersed, but still bound together.
+ The order of the elements is maintained by explicit links between them. Thus, a linked list is a collection of elements called nodes,
+ each of which stores two item of information—an element of the list, and a link, i.e., a pointer or an address that indicates
+ explicitly the location of the node containing the successor of this list element.
+ Write a program to build a linked list by adding new nodes at the beginning, at the end or in the middle of the linked list.
+ Also write a function display( ) which display all the nodes present in the linked list.
+
+
+ Ques. 9 - A stack is a data structure in which addition of new element or deletion of existing element always takes place at the same
+ Chapter 10: Structures 391
+ end. This end is often known as ‘top’ of stack. This situation can be compared to a stack of plates in a cafeteria where every new
+ plate taken off the stack is also from the ‘top’ of the stack. There are several application where stack can be put to use.
+ For example, recursion, keeping track of function calls, evaluation of expressions, etc. Write a program to implement a stack using
+ a linked list.
+
+
+ Ques. 10 - Unlike a stack, in a queue the addition of new element takes place at the end (called ‘rear’ of queue) whereas
+ deletion takes place at the other end (called ‘front’ of queue). Write a program to implement a queue using a linked list.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*
+  Write a menu driven program that depicts the working of a library. The menu options should be:
+ 1. Add book information
+ 2. Display book information
+ 3. List all books of given author
+ 4. List the title of specified book
+ 5. List the count of books in the library
+ 6. List the books in the order of accession number
+ 7. Exit*/
+
+struct Info {
+	int accessionNumber;
+	char title[50];
+	char author[50];
+	int price;
+	int flag; //0 = issued
+};
+int main(void) {
+	int choice;
+	printf("Enter your choice:"
+			"1. Add book information\r\n"
+			"2. Display book information\r\n"
+			"3. List all books of given author\r\n"
+			"4. List the title of specified book\r\n"
+			"5. List the count of books in the library\r\n"
+			"6. List the books in the order of accession number\r\n"
+			"7. Exit\r\n");
+	fflush(stdout);
+	scanf("%d", &choice);
+	fflush(stdin);
+	switch (choice) {
+	case 1:
+
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+
+		break;
+	case 6:
+
+		break;
+	case 7:
+
+		break;
+	default:
+		break;
+	}
+
+	return 0;
+}
+

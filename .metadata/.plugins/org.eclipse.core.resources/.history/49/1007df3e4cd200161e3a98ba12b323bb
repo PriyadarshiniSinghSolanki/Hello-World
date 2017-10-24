@@ -1,0 +1,69 @@
+/*
+ ============================================================================
+ Name        : Try.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Try, your code First here
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 25
+struct Linklist {
+	int data;
+	struct Linklist *next;
+};
+
+void push(struct Linklist **head_ref, int new_data) {
+	struct Linklist *new_node = (struct Linklist*) malloc(
+			sizeof(struct Linklist));
+	new_node->data = new_data;
+	new_node->next = *head_ref;
+	*head_ref = new_node;
+	return;
+}
+void pop(struct Linklist **head_ref) {
+	struct Linklist *temp_node = *head_ref;
+	*head_ref = temp_node->next;
+	free(temp_node);
+}
+void pop_data(struct Linklist **head_ref, int data) {
+	struct Linklist *temp_node = *head_ref, *prev_node;
+	if ((temp_node != NULL) && (temp_node->data == data)) {
+		*head_ref = temp_node->next;
+		free(temp_node);
+		return;
+	}
+	while ((temp_node != NULL) && (temp_node->data != data)) {
+		prev_node = temp_node;
+		temp_node = temp_node->next;
+	}
+	prev_node->next = temp_node->next;
+	free(temp_node);
+	return;
+}
+
+void printStack(struct Linklist *n) {
+	while (n != NULL) {
+		printf("%d\n", n->data);
+		n = n->next;
+	}
+	return;
+}
+
+int main(void) {
+	struct Linklist *head = NULL;
+	push(&head, 1);
+	push(&head, 2);
+	push(&head, 3);
+	push(&head, 4);
+	pop(&head);
+	push(&head, 5);
+	pop(&head);
+	pop_data(&head, 2);
+	printStack(head);
+	return EXIT_SUCCESS;
+}

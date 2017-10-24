@@ -1,0 +1,20 @@
+/*7. How to display same source code as output in c programming?*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+int main() {
+	FILE *fp1;
+	char ch;
+	fp1 = fopen(__FILE__, "r");
+	/*if(fp1 == NULL){
+	 printf("unable to open file");
+	 exit(1);
+	 }*/do {
+		ch = fgetc(fp1);
+		printf("%c", ch);
+		printf("%d", __DATE__);
+	} while (ch != EOF);
+	fclose(fp1);
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,7 @@
+10:26:18 **** Incremental Build of configuration Debug for project SaveThePrisoner ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SaveThePrisoner.o" "..\\src\\SaveThePrisoner.c" 
+gcc -o SaveThePrisoner.exe "src\\SaveThePrisoner.o" 
+
+10:26:19 Build Finished (took 488ms)
+

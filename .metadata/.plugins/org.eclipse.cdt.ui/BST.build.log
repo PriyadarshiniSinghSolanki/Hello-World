@@ -1,0 +1,7 @@
+11:45:06 **** Incremental Build of configuration Debug for project BST ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\trybst.o" "..\\src\\trybst.c" 
+gcc -o BST.exe "src\\trybst.o" 
+
+11:45:07 Build Finished (took 1s.172ms)
+

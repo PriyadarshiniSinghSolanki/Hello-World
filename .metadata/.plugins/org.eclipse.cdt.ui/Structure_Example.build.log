@@ -1,0 +1,7 @@
+12:43:48 **** Incremental Build of configuration Debug for project Structure_Example ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Structure_Example.o" "..\\src\\Structure_Example.c" 
+gcc -o Structure_Example.exe "src\\exampleUsingStructure.o" "src\\Structure_Example.o" "src\\File_Access.o" 
+
+12:43:49 Build Finished (took 1s.225ms)
+

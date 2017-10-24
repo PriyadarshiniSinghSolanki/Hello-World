@@ -1,0 +1,53 @@
+ #include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int nochange_bits(char* input1,int input2,int input3)
+    {
+        int i;
+        /*int input4;
+        input4 = atoi(input1);*/
+        int *temp;
+        int same;
+        for(i=0; i < 11;i++){
+            *input1 = *input1 ^ (1<<i);
+            input1++;
+        }
+        temp = input1;
+        for(i=1; i <= 11;i++){
+            if(i==input2){
+            *temp = *temp ^ (1<<i);
+            temp++;
+            }
+        }
+        for(i=1; i <= 11;i++){
+            if(i==input3){
+            *temp = *temp ^ (1<<i);
+            temp++;
+            }
+        }
+        for(i=0; i < 11;i++){
+            if(((*temp<<i)^(*input1<<i)) == 0){
+            	temp++;input1++;
+                same++;
+            }
+        }
+        input2 = same;
+        return input2;
+    }
+int main() {
+    int output = 0;
+    char* ip1;
+    ip1 = (char *)malloc(512000 * sizeof(char));
+    scanf("\n%[^\n]",ip1);
+    int ip2;
+    scanf("%d", &ip2);
+    int ip3;
+    scanf("%d", &ip3);
+    output = nochange_bits(ip1,ip2,ip3);
+    printf("%d\n", output);
+    return 0;
+}

@@ -1,0 +1,32 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure {
+	int SR;
+	int rollNo;
+	char name[50];
+} Student1, Student2;
+struct structure *details;
+void printstudent(struct structure *details){
+	printf(("%d "), details->SR);
+	printf(("%d "), details->rollNo);
+	printf(("%s\n"), details->name);
+}
+int main() {
+	strcpy( details->name, "Priyadarshini");
+	details->SR = 1;
+	details->rollNo = 101;
+
+	printf(("%d "), details->SR);
+		printf(("%d "), details->rollNo);
+		printf(("%s\n"), details->name);
+	return 0;
+}

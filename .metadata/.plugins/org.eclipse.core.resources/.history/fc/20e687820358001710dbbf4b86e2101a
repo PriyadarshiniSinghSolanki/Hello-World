@@ -1,0 +1,69 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2316
+ *      Author: Sys-5334
+ */
+/*Name and marks in different subjects (physics, chemistry and maths) are given for all students.
+ * The task is to compute total marks and ranks of all students. And finally display all students sorted by rank.
+ *
+ * Rank of student is computed using below rules.
+ * If total marks are different, then students with higher marks gets better rank.
+ * If total marks are same, then students with higher marks in Maths gets better rank.
+ * If total marks are same and marks in Maths are also same, then students with better marks in Physics gets better rank.
+ * If all marks (total, Maths, Physics and Chemistry) are same, then any student can be assigned bedtter rank.*/
+
+#include <stdio.h>
+typedef struct Student {
+	int No;
+	int total;
+	int rank;
+	struct marks {
+		int Physics;
+		int Chemistry;
+		int Maths;
+	} Subject;
+} Details;
+
+int main(void) {
+	int n;
+	scanf("No. of students: %d", &n);
+	Details detail[n];
+	detail[3].No = 1;
+	detail[3].Subject.Physics = 12;
+	detail[3].Subject.Chemistry = 12;
+	detail[3].Subject.Maths = 12;
+	detail[3].total = detail[3].Subject.Physics + detail[3].Subject.Chemistry
+			+ detail[3].Subject.Maths;
+
+	detail[1].No = 2;
+	detail[1].Subject.Physics = 45;
+	detail[1].Subject.Chemistry = 45;
+	detail[1].Subject.Maths = 45;
+	detail[1].total = detail[1].Subject.Physics + detail[1].Subject.Chemistry
+			+ detail[1].Subject.Maths;
+
+	detail[2].No = 3;
+	detail[2].Subject.Physics = 9;
+	detail[2].Subject.Chemistry = 9;
+	detail[2].Subject.Maths = 9;
+	detail[2].total = detail[2].Subject.Physics + detail[2].Subject.Chemistry
+			+ detail[2].Subject.Maths;
+
+	detail[3].No = 4;
+	detail[3].Subject.Physics = 44;
+	detail[3].Subject.Chemistry = 44;
+	detail[3].Subject.Maths = 44;
+	detail[3].total = detail[3].Subject.Physics + detail[3].Subject.Chemistry
+			+ detail[3].Subject.Maths;
+
+	detail[4].No = 5;
+	detail[4].Subject.Physics = 63;
+	detail[4].Subject.Chemistry = 63;
+	detail[4].Subject.Maths = 63;
+	detail[4].total = detail[4].Subject.Physics + detail[4].Subject.Chemistry
+			+ detail[4].Subject.Maths;
+
+	return 3;
+}
+

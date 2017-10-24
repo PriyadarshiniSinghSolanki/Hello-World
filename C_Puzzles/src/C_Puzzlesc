@@ -1,0 +1,456 @@
+/*
+ ============================================================================
+ Name        : C_Puzzles.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	return EXIT_SUCCESS;
+}
+
+/*1. C Program to print numbers from 1 to N without using semicolon?*/
+#define NUM 100
+int main(int num, char *argv[]) {
+	while (num <= NUM && printf("%d ", num) && num++) {
+	
+	}
+	return 0;
+}
+
+/*2. To find sum of two numbers without using any operator*/
+int sum(int x, int y);
+int main() {
+	printf("%d", sum(3, 5));
+	return 0;
+}
+int sum(int x, int y) {
+	return printf("%*c%*c", x, ' ', y, ' ');
+}
+
+/*Write a C program to show memory representation of C variables like int, float, pointer, etc.
+Algorithm: Get the address and size of the variable.
+			Typecast the address to char pointer.
+			Now loop for size of the variable and print the value at the typecasted pointer.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+typedef unsigned char *byte_pointer;
+
+void test(byte_pointer add, int len) {
+	int i;
+	for (i = 0; i < len; i++) {
+		printf("%.2X ", add[i]);
+	}
+}
+int main() {
+	int num = 8;
+	char str = 'c';
+	float value = 1.5;
+	char *ch = &str;
+
+	test((byte_pointer) &str, sizeof(str));
+	printf("\n");
+
+	test((byte_pointer) &value, sizeof(value));
+	printf("\n");
+
+	test((byte_pointer) &num, sizeof(num));
+	printf("\n");
+
+	test((byte_pointer) &ch, sizeof(*ch));
+	printf("\n");
+	return 0;
+}
+
+/*What should be the “condition” so that the following code snippet prints both HelloWorld !*/
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	if (!printf("Hello"))
+		printf("Hello");
+	else
+		printf("World");
+	return 0;
+}
+
+/*In the below code, change/add only one character and print ‘*’ exactly 20 times.*/
+#include <stdio.h>
+int main() {
+	int i, n = 20;
+	for (i = 0; i < n; n--)
+		printf("*");
+	return 0;
+}
+
+/*How can we sum the digits of a given number in single statement?*/
+#include <stdio.h>
+int sum(int n) {
+	return (n == 0) ? 0 : (n % 10) + sum(n / 10);
+}
+int main() {
+	int n = 12320;
+	printf("%d", sum(n));
+	return 0;
+}
+
+/*What is the best way in C to convert a number to a string?*/
+#include <stdio.h>
+int main() {
+	int n = 6778;
+	char arr[50];
+	sprintf(arr, "%d", n);
+	printf("%s", arr);
+	return 0;
+}
+
+
+/*Calculate Logn in one line*/
+#include <stdio.h>
+int log2(int n) {
+	return (n > 1) ? 1 + log2(n / 2) : 0;
+}
+int main() {
+	int n = 64;
+	printf("%d", log2(n));
+	return 0;
+}
+
+/*Print “Even” or “Odd” without using Conditional statement*/
+#include <stdio.h>
+int main() {
+	int i = 80;
+	return (i % 2) ? printf("odd") : printf("even");
+	return 0;
+}
+/*----------------------   OR  ------------------------*/
+#include <stdio.h>
+int main() {
+	int i = 80;
+	char arr[2][5] = { "Even", "Odd" };
+	printf("%s", arr[i % 2]);
+	return 0;
+}
+
+
+/*How will you print numbers from 1 to 100 without using loop?*/
+#include <stdio.h>
+void num(int n) {
+	if (n > 0) {
+		num(n - 1);
+	}
+	printf("%d ", n);
+}
+int main() {
+	num(100);
+	return 0;
+}
+
+/*How can we sum the digits of a given number in single statement?*/
+#include <stdio.h>
+int sum(int num) {
+	return (num != 0) ? sum(num / 10) + (num % 10) : 0;
+}
+int main() {
+	int i = 2320;
+	printf("%d", sum(i));
+	return 0;
+}
+
+/*How will you print “Geeks for Geeks” without using a semicolon*/
+#include <stdio.h>
+int main() {
+	if (printf("Geeks for Geeks")) {
+
+	}
+	return 0;
+}
+
+/*Write a one line C function to round floating point numbers*/
+#include <stdio.h>
+int main() {
+	float n = -7.3;
+	int a = n;
+	return (n >= (a + 0.5)) ? printf("%d", a + 1) : printf("%d", a);
+	return 0;
+}
+/*-------------------OR------------------------*/
+#include <stdio.h>
+int main() {
+	float n = 7.5;
+	return (n > 0) ?
+			printf("%d", (int) (n + 0.5)) : printf("%d", (int) (n - 0.5));
+	return 0;
+}
+
+/*How will implement Your Own sizeof*/
+#include <stdio.h>
+#include <stdlib.h>
+#define size(var) (char*)(&var+1)-(char*)(&var)
+int main() {
+	char x;
+	int y;
+	printf("%d ", size(x));
+	printf("%d", size(y));
+	return 0;
+}
+
+/*How to find length of a string without string.h and loop in C?*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char str[6] = "hello";
+	return (printf("\nLen : %d", printf("%s", str)));
+	return 0;
+}
+
+/*How to change the output of printf() in main() ?*/
+#include <stdio.h>
+#include <stdlib.h>
+
+void fun() {
+#define printf(x,y) printf(x,10);
+}
+
+int main() {
+	char var = 20;
+	printf("%d", var);
+	return 0;
+}
+
+
+/*How to measure time taken by a function in C?*/
+/*To calculate time taken by a process, we can use clock() function which is available time.h.
+ * We can call the clock function at the beginning and end of the code, subtract the values,
+ * and then divide by CLOCKS_PER_SEC (the number of clock ticks per second) to get processor time*/
+
+/* clock example: frequency of primes */
+#include <stdio.h>      /* printf */
+#include <time.h>       /* clock_t, clock, CLOCKS_PER_SEC */
+#include <math.h>       /* sqrt */
+
+int frequency_of_primes(int n) {
+	int i, j;
+	int freq = n - 1;
+	for (i = 2; i <= n; ++i)
+		for (j = sqrt(i); j > 1; --j)
+			if (i % j == 0) {
+				--freq;
+				break;
+			}
+	return freq;
+}
+
+int main() {
+
+	clock_t time = clock();
+	printf("Calculating...\n");
+	int f = frequency_of_primes(99999);
+	printf("The number of primes lower than 100,000 is: %d\n", f);
+	time = clock() - time;
+	double t_Taken = (double) time / CLOCKS_PER_SEC;
+	printf("It took me %lf clicks (%lf seconds).\n", t_Taken,
+			((float) t_Taken) / CLOCKS_PER_SEC);
+	return 0;
+}
+
+
+/* A C program that does not terminate when Ctrl+C is pressed */
+/*Signals are software generated interrupts that are sent to a process when a event happens.
+ * C standard defines following 6 signals in signal.h header file.
+ SIGABRT – abnormal termination.
+ SIGFPE – floating point exception.
+ SIGILL – invalid instruction.
+ SIGINT – interactive attention request sent to the program.
+ SIGSEGV – invalid memory access.
+ SIGTERM – termination request sent to the program.*/
+#include <stdio.h>
+#include <signal.h>
+
+/* Signal Handler for SIGINT */
+void sigintHandler(int sig_num) {
+	/* Reset handler to catch SIGINT next time.*/
+	signal(SIGINT, sigintHandler);
+	printf("\n Cannot be terminated using Ctrl+C \n");
+	return;
+}
+
+int main() {
+	/* Set the SIGINT (Ctrl-C) signal handler to sigintHandler
+	 Refer http://en.cppreference.com/w/c/program/signal */
+	signal(SIGINT, sigintHandler);
+	while (1) {
+	}
+	return 0;
+}
+
+/*How to write a running C code without main()?*/
+#include <stdio.h>
+#define fun main
+//#define fun m##a##i##n
+int fun() {
+	printf("HELLO");
+	return 0;
+}
+
+/*Convert a floating point number to string in C*/
+#include <stdio.h>
+int main() {
+	float ft = 23.87f;
+	char arr[10];
+	sprintf(arr, "%f", ft);
+	printf("%s", arr);
+	return 0;
+}
+/*A simple way is to use sprintf(), but use of standard library functions for direct conversion is not allowed.
+ The idea is to separate integral and fractional parts and convert them to strings separately. Following are the detailed steps.
+ 1) Extract integer part from floating point.
+ 2) First convert integer part to string.
+ 3) Extract fraction part by exacted integer part from n.
+ 4) If d is non-zero, then do following.
+ ….a) Convert fraction part to integer by multiplying it with pow(10, d)
+ ….b) Convert the integer value to string and append to the result.*/
+#include <stdio.h>
+#include <strings.h>
+#include <math.h>
+int int_Str(int n, char *str, int afterpoint) {
+	int i = 0;
+	while (n) {
+		str[i++] = n % 10 + '0';
+		n = n / 10;
+	}
+	while (i < afterpoint)
+		str[i++] = '0';
+	str = strrev(str);
+	str[i] = '\0';
+	return i;
+}
+// Converts a floating point number to string.
+void ftoa(float num, char *res, int afterpoint) {
+	int int_part = (int) num;
+	float float_part = num - int_part;
+	int i = int_Str(int_part, res, 0);
+	res[i] = '.';
+	float_part = float_part * pow(10, afterpoint);
+	int_Str((int) float_part, res + i + 1, afterpoint);
+}
+int main() {
+	float num = 233.987;
+	char res[20];
+	ftoa(num, res, 3);
+	printf("\n%s\n", res);
+	return 0;
+}
+
+/* C program to print a long int number using putchar() only*/
+#include <stdio.h>
+void print(long int ch) {
+	if (ch < 0) {
+		putchar('-');
+		ch = -ch;
+	}
+	if (ch == 0)
+	putchar('0');
+	if (ch / 10)
+	print(ch / 10);
+
+	putchar(ch % 10 + '0');
+}
+int main() {
+	long int ch = 123456789;
+	print(ch);
+	return 0;
+}
+
+/*  Implement your own itoa() */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+// Implementation of itoa()
+char* itoa(int num, char* str, int base) {
+	int i = 0;
+	bool isNegative = false;
+
+	/* Handle 0 explicitely, otherwise empty string is printed for 0 */
+	if (num == 0) {
+		str[i++] = '0';
+		str[i] = '\0';
+		return str;
+	}
+
+	// In standard itoa(), negative numbers are handled only with
+	// base 10. Otherwise numbers are considered unsigned.
+	if (num < 0 && base == 10) {
+		isNegative = true;
+		num = -num;
+	}
+
+	// Process individual digits
+	while (num != 0) {
+		int rem = num % base;
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+		num = num / base;
+	}
+
+	// If number is negative, append '-'
+	if (isNegative)
+	str[i++] = '-';
+
+	str[i] = '\0';// Append string terminator
+
+	// Reverse the string
+	strrev(str);
+
+	return str;
+}
+
+// Driver program to test implementation of itoa()
+int main() {
+	char str[100];
+	printf("Base:%s ", itoa(1567, str, 10));
+	printf("Base:%s ", itoa(-1567, str, 10));
+	printf("Base:%s ", itoa(1567, str, 2));
+	printf("Base:%s ", itoa(1567, str, 8));
+	printf("Base:%s ", itoa(1567, str, 16));
+	return 0;
+}
+
+/* Write your own memcpy()*/
+#include <stdio.h>
+#include <string.h>
+void Mem_Copy(void *des, void* src, int Size) {
+	char *csrc = (char *) src;
+	int var;
+	char *cdest = (char *) des;
+	for (var = 0; var < Size; var++) {
+		cdest[var] = csrc[var];
+	}
+	cdest[var] = '\0';
+}
+int main() {
+	char ch[100] = "PriyadarshiniSinghSolanki";
+	char des[100];
+	int Size = strlen(ch);
+	printf("%d", Size);
+	Mem_Copy(&des, &ch, Size);
+	printf("\n%s", des);
+
+	int isrc[] = { 10, 20, 30, 40, 50 };
+	int n = sizeof(isrc) / sizeof(isrc[0]);
+	int idest[n], i;
+	Mem_Copy(idest, isrc, sizeof(isrc));
+	printf("\nCopied array is ");
+	for (i = 0; i < n; i++)
+		printf("%d ", idest[i]);
+	return 0;
+}

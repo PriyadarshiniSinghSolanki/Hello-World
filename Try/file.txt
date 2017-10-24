@@ -1,0 +1,1 @@
+fseek(FILE *stream, long int offset, int whence) - It is used to move the reading control to different positions using fseek function/set the position to desire point.

@@ -1,0 +1,55 @@
+/*
+ ============================================================================
+ Name        : Circular_LinkedList.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Insertion and Traversal of Circular Linkedlist
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct LinkedList {
+	int data;
+	struct LinkedList *next;
+};
+
+void insert(struct LinkedList **head, int newData) {
+	struct LinkedList *newNode = (struct LinkedList*) malloc(sizeof(struct LinkedList));
+	struct LinkedList *curr = *head;
+	newNode->data = newData;
+	newNode->next = *head;
+	if (*head != NULL) {
+		while(curr->next != *head)
+			curr= curr->next;
+		curr->next= newNode;
+	}else
+		newNode->next = newNode;
+    *head = newNode;
+}
+
+void print(struct LinkedList *head) {
+	struct LinkedList *curr = head;
+	if (head != NULL) {
+		do {
+			printf("%d ", head->data);
+			head = head->next;
+		} while (head != curr);
+	}
+}
+
+
+int main(void) {
+	struct LinkedList *head = NULL;
+	insert(&head, 10);
+	insert(&head, 11);
+	insert(&head, 12);
+	insert(&head, 14);
+	insert(&head, 15);
+	print(head);
+	return 0;
+}
+
+

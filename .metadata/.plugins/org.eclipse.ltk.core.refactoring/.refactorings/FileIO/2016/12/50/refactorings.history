@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FileIO/src/File2FileCopy.c&apos; to &apos;File2FileCopy&apos;" description="Rename resource &apos;File2FileCopy.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/File2FileCopy.c" name="File2FileCopy" stamp="1480933879923" updateReferences="true"/>
+</session>

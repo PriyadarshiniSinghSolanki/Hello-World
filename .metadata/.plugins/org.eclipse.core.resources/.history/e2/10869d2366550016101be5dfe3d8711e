@@ -1,0 +1,57 @@
+/*
+ * File_IO.c
+ *
+ *  Created on: 18-Jul-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+
+int main() {
+//printf("%c", getc(stdin));
+//printf("%c", getchar());
+//printf("%c", getche());
+	FILE *fp;  //Pointer to the file
+	char ch;  //Character variable to read the content of file
+	printf("File");
+	fflush(stdout);
+	fp = fopen("IO.txt", "r"); //Opening a file in r mode
+
+		ch = fgetc(fp);
+		if (ch == '\0') {
+			printf("EOF");
+			fflush(stdout);
+		} else
+			printf("%c", ch);
+			fflush(stdout);fclose(fp);
+
+	return 0;
+}
+/*#include <conio.h>
+ #include <stdio.h>
+ int main()
+ {
+ char ch;// file_name[25];
+ // printf("Enter the name of file you wish to see\n");
+ // fflush(stdout);
+ FILE *fp;
+ //gets(file_name);
+
+ fp = fopen("D:/Project/Workspace/cdtWorkspace/File_IO/Debug/IO","r"); // read mode
+
+ if( fp == NULL )
+ {
+ perror("Error while opening the file.\n");
+ fflush(stdout);
+ }
+
+ // printf("The contents of %s file are :\n", file_name);
+ // fflush(stdout);
+
+ while( ( ch = fgetc(fp) ) != EOF )
+ printf("%c",ch);
+ fflush(stdout);
+
+ fclose(fp);
+ return 0;
+ }*/

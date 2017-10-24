@@ -1,0 +1,24 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure {
+	int SR;
+	int rollNo;
+	char *name;
+} Student1, Student2;
+struct structure *details;
+int main() {
+	char s1[6] = "hello",s2[20] = "welcome";
+
+	strcat(s1,s2);
+	printf("%d %d %s", Student1.SR, Student1.rollNo, (char*) Student1.name);
+	return 0;
+}

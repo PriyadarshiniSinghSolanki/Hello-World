@@ -1,0 +1,186 @@
+/*
+ * LinkedListExample.c
+ *
+ *  Created on: 21-Sep-2017
+ *      Author: Sys-5304
+ *      Description: LinkedList Practice -
+ *      				1. Linked List Insertion
+ *						2. Linked List Deletion (Deleting a given key)
+ *						3. Linked List Deletion (Deleting a key at given position)
+ *						4. Find Length of a Linked List (Iterative and Recursive)
+ *						5. Swap nodes in a linked list without swapping data
+ *						6. Reverse a linked list
+ *						7. Reverse a Linked List in groups of given size
+ *						8. Detect and Remove Loop in a Linked List
+ *						9. Add two numbers represented by linked lists | Set 1
+ *						10. Rotate a Linked List
+ *						11. Generic Linked List in C
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct LinkedList {
+	int data;
+	struct LinkedList *next;
+};
+
+void insert(struct LinkedList **head, int newData) {
+	struct LinkedList *newNode = (struct LinkedList*) malloc(
+			sizeof(struct LinkedList));
+	newNode->data = newData;
+	newNode->next = *head;
+	*head = newNode;
+}
+
+void insertKey(struct LinkedList **head, int newData, int key) {
+	struct LinkedList *temp;
+	struct LinkedList *prev = NULL;
+	struct LinkedList *newNode = (struct LinkedList*) malloc(
+			sizeof(struct LinkedList));
+	temp = *head;
+	while (temp->data != key) {
+		prev = temp;
+		temp = temp->next;
+	}
+	prev->next = newNode;
+	newNode->data = newData;
+	newNode->next = temp;
+
+}
+
+void delete(struct LinkedList **head) {
+	struct LinkedList *prev;
+	prev = *head;
+	*head = prev->next;
+	free(prev);
+
+}
+
+void deleteKey(struct LinkedList **head, int key) {
+	struct LinkedList *temp;
+	struct LinkedList *prev = NULL;
+	temp = *head;
+	while (temp->data != key) {
+		prev = temp;
+		temp = temp->next;
+	}
+	prev->next = temp->next;
+	free(temp);
+
+}
+
+void swap(struct LinkedList **head, int x, int y) {
+	if (x == y)
+		return;
+	struct LinkedList *prevX = NULL, *tempX = *head;
+	while (tempX && (tempX->data != x)) {
+		prevX = tempX;
+		tempX = tempX->next;
+	}
+
+	struct LinkedList *prevY = NULL, *tempY = *head;
+	while (tempY && (tempY->data != y)) {
+		prevY = tempY;
+		tempY = tempY->next;
+	}
+
+	if ((tempX == NULL) || (tempY == NULL))
+		return;
+
+	if (prevX != NULL)
+		prevX->next = tempY;
+	else
+		*head = tempY;
+
+	if (prevY != NULL)
+		prevY->next = tempX;
+	else
+		*head = tempX;
+
+	struct LinkedList *temp = tempY->next;
+	tempY->next = tempX->next;
+	tempX->next = temp;
+}
+
+void reverse(struct LinkedList **head) {
+	struct LinkedList *curr = *head;
+	struct LinkedList *next;
+	struct LinkedList *prev = NULL;
+
+	while (curr != NULL) {
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+	*head = prev;
+}
+
+void reverseTill(struct LinkedList **head, int k) {
+	static int count;
+	struct LinkedList *prev = NULL, *next, *curr, *temp;
+	curr = *head;
+	temp = *head;
+	if ((count >= k) || (curr == NULL) || curr->next == NULL)
+		return;
+	while ((curr != NULL) && (count < k)) {
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+		count++;
+	}
+	temp->next = curr;
+	while (curr != NULL) {
+		curr = curr->next;
+	}
+	*head = prev;
+
+}
+
+void addLinkedList(struct LinkedList *First, struct LinkedList *Second){
+
+
+}
+
+void print(struct LinkedList *temp) {
+	while (temp != NULL) {
+		printf("%d ", temp->data);
+		temp = temp->next;
+	}
+	printf("\n");
+}
+
+int length(struct LinkedList *head) {
+	static int cnt;
+	while (head != NULL) {
+		head = head->next;
+		cnt++;
+	}
+	return cnt;
+}
+
+int main() {
+	struct LinkedList *head = NULL;
+	insert(&head, 10);
+	insert(&head, 11);
+	insert(&head, 12);
+	insert(&head, 13);
+	insert(&head, 14);
+	print(head);
+	insertKey(&head, 15, 11);
+	print(head);
+	delete(&head);
+	print(head);
+	deleteKey(&head, 11);
+	print(head);
+	printf("%d\n", length(head));
+	swap(&head, 15, 10);
+	print(head);
+	reverse(&head);
+	print(head);
+	reverseTill(&head, 3);
+	print(head);
+	return 0;
+}

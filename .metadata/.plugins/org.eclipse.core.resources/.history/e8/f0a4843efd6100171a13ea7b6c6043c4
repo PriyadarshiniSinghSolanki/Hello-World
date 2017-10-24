@@ -1,0 +1,116 @@
+/*
+ Sample Input:
+ 3
+ sam 99912222
+ tom 11122222
+ harry 12299933
+ sam
+ edward
+ harry
+
+ Sample Output:
+ sam=99912222
+ Not found
+ harry=12299933
+
+ #include <stdio.h>
+ #include <string.h>
+ #include <math.h>
+ #include <stdlib.h>
+
+ int main() {
+
+ int entry, i, j;
+ scanf("%d", &entry);
+ struct Directory {
+ char name[50];
+ int num;
+ } list[entry];
+
+ struct Query {
+ char qname[50];
+ int qnum;
+ } qlist[entry];
+
+ struct Directory *add = (struct Directory*) malloc(
+ sizeof(struct Directory));
+ for (i = 0; i < entry; ++i) {
+ scanf("%s %d", list[i].name, &list[i].num);
+ }
+ for (i = 0; i < entry; ++i) {
+ scanf("%s", qlist[i].qname);
+ }
+ int k = entry;
+ i = 0;
+ int cmp;
+ while (k) {
+ cmp = 0;
+ for (j = 0; j < entry; j++) {
+ cmp = strcmp(qlist[i].qname, list[j].name);
+ if (cmp == 0) {
+ cmp = 0;
+ break;
+ } else {
+ cmp = 1;
+ }
+ }
+ if (cmp == 0) {
+ printf("%s=%d\n", list[j].name, list[j].num);
+ } else {
+ printf("Not found\n");
+ }
+ i++;
+ k--;
+ }
+ return 0;
+ }
+ */
+/*
+ #include <stdio.h>
+ #include <string.h>
+ #include <math.h>
+ #include <stdlib.h>
+
+ int main() {
+
+ Enter your code here. Read input from STDIN. Print output to STDOUT
+ int n;
+ static int cnt;
+ scanf("%d", &n);
+ char *str;
+ str = (char*) malloc(sizeof(char*));
+ scanf("%s", str);
+ while (*str) {
+ if (*str == 'U') {
+ cnt++;
+ str++;
+ } else if (*str == 'D') {
+ cnt--;
+ str++;
+ }
+ }
+ printf("%d", cnt);
+ return 0;
+ }
+ */
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    // Enter your code here. Read input from STDIN. Print output to STDOUT
+	 int n,i,j ;
+	 scanf("%d",&n);
+	 long int *arr = malloc(sizeof(int)*n);
+    int arr1[n];
+    for(i=0;i<n;i++){
+        scanf("%ld",arr[i]);
+    }
+
+
+    return 0;
+}

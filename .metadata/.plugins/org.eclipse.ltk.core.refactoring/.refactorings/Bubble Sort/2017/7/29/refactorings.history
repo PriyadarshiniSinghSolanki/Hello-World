@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sorting/src/Sorting.c&apos; to &apos;BubbleSort.c&apos;" description="Rename resource &apos;Sorting.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Sorting.c" name="BubbleSort.c" stamp="1500280132372" updateReferences="true"/>
+</session>

@@ -1,0 +1,33 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure {
+	int SR;
+	int rollNo;
+	char *name;
+} Student1, Student2;
+struct structure *details;
+void printstudent(struct Student *details);
+int main() {
+	Student1.name = (char*) malloc(sizeof(char*));
+	strcpy((char*) Student1.name, "Priyadarshini");
+	Student1.SR = 1;
+	Student1.rollNo = 101;
+	details = &Student1;
+	Student2.name = (char*) malloc(sizeof(char*));
+	strcpy((char*) Student2.name, "Priya");
+	Student2.SR = 2;
+	Student2.rollNo = 102;
+	details = &Student2;
+//	printf("%d %d %s", Student.SR, Student.rollNo, (char*) Student.name);
+	void printstudent(struct Student *)
+	return 0;
+}

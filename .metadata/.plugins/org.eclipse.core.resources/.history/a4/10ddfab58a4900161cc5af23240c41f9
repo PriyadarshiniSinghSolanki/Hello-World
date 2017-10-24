@@ -1,0 +1,67 @@
+/*
+ * Own_Str_Fun.c
+ *
+ *  Created on: 13-Jul-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <string.h>
+
+void strcopy(char arr_str1[], char arr_str2[]);
+int Strcompare(char *ptr_str1, char *ptr_str2);
+
+int main() {
+	char arr_str1[20], arr_str2[20];
+	//char *ptr_str1 = arr_str1;
+	//char *ptr_str2 = arr_str2;
+
+	printf("Enter string 1:");
+	fflush( stdout);
+	scanf("%s", arr_str1);
+
+	printf("Enter string 2:");
+	fflush( stdout);
+	scanf("%s", arr_str2);
+
+	/*strcopy(arr_str1, arr_str2);
+	 printf("After Copy String 1 is:%s\r\n", arr_str1);*/
+
+	int Cmpresult = (Strcompare(arr_str1, arr_str2));
+	printf("Compare Result:%d", Cmpresult);
+	if (Cmpresult)
+		printf("String 1 and String 2 Mismatch\r\n");
+	else
+		printf("String 1 and String 2 Match\r\n");
+
+	/*strcat(ptr_str1, ptr_str2);
+	 printf("After Concatenation String 1 is:%s", ptr_str1);*/
+
+	return 0;
+}
+
+void strcopy(char arr_str1[], char arr_str2[]) {
+	int i = 0;
+	while (arr_str2[i] != '\0') {
+		arr_str1[i] = arr_str2[i];
+		i++;
+	}
+	arr_str1[i] = '\0';
+}
+
+int Strcompare(char *ptr_str1, char *ptr_str2) {
+	int result;
+	printf("ptr4str: %s", ptr_str1);
+	if ((*ptr_str1 != '\0') && (*ptr_str2 != '\0')) {
+		while (ptr_str1 == ptr_str2) {
+			ptr_str1++;
+			ptr_str2++;
+			result = 0;
+		}
+		//result = 0;
+	}
+	else
+		result = 1;
+
+	return result;
+}

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="">
+		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="DialogBounds_SearchDialog">
+		<item value="640" key="DIALOG_WIDTH"/>
+		<item value="77" key="DIALOG_Y_ORIGIN"/>
+		<item value="443" key="DIALOG_HEIGHT"/>
+		<item value="320" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Search">
+		<list key="Search.processedPageIds">
+			<item value="org.eclipse.rse.internal.files.ui.search.searchPage"/>
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
+			<item value="org.eclipse.cdt.ui.pdomSearchPage"/>
+			<item value="org.eclipse.egit.ui.commitSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+		</list>
+		<list key="Search.enabledPageIds">
+			<item value="org.eclipse.rse.internal.files.ui.search.searchPage"/>
+			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
+			<item value="org.eclipse.cdt.ui.pdomSearchPage"/>
+			<item value="org.eclipse.egit.ui.commitSearchPage"/>
+			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
+		</list>
+	</section>
+	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
+		<item value="true" key="showEnclosingDefinitions"/>
+	</section>
+	<section name="org.eclipse.search.text.FileSearchResultPage">
+		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="SearchDialog">
+		<item value="org.eclipse.cdt.ui.pdomSearchPage" key="PREVIOUS_PAGE"/>
+	</section>
+	<section name="TextSearchPage">
+		<item value="true" key="CASE_SENSITIVE"/>
+		<item value="false" key="REG_EX_SEARCH"/>
+		<item value="false" key="SEARCH_DERIVED"/>
+		<item value="false" key="WHOLE_WORD"/>
+		<item value="10" key="HISTORY_SIZE"/>
+		<section name="HISTORY2">
+			<item value="false" key="isRegExSearch"/>
+			<item value="sizeof" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.c"/>
+				<item value="*.h"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="EXTENSIONS">
+			<item value="*.c" key="2"/>
+			<item value="*.C, *.S, *.a, *.am, *.ant, *.asm, *.bc, *.c, *.c++, *.cc, *.class, *.class without source, *.confluence, *.cpp, *.cxx, *.dll, *.doc, *.docx, *.dtd, *.dylib, *.e4xmi, *.ecore, *.elf, *.emof, *.ent, *.exe, *.exe.bc, *.exsd, *.h, *.hh, *.hpp, *.htm, *.html, *.hxx, *.jardesc, *.java, *.jpage, *.lib, *.ll, *.log, *.macrodef, *.markdown, *.md, *.mdtext, *.mediawiki, *.mk, *.mod, *.o, *.obj, *.out, *.patch, *.pda, *.pom, *.prefs, *.pro, *.properties, *.qml, *.s, *.shtml, *.so, *.textile, *.tracwiki, *.twiki, *.txt, *.upc, *.wsdl, *.xmi, *.xml, *.xsd, *.xsl, *.xslt" key="1"/>
+			<item value="*.c, *.h" key="0"/>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isRegExSearch"/>
+			<item value="char" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.h"/>
+				<item value="*.c"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isRegExSearch"/>
+			<item value="error" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.h"/>
+				<item value="*.c"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isRegExSearch"/>
+			<item value="itoa" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.c"/>
+				<item value="*.h"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY9">
+			<item value="false" key="isRegExSearch"/>
+			<item value="truth_table" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.c"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY8">
+			<item value="false" key="isRegExSearch"/>
+			<item value="_TIME_" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.c"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isRegExSearch"/>
+			<item value="bool" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.prefs"/>
+				<item value="*.bc"/>
+				<item value="*.class without source"/>
+				<item value="*.so"/>
+				<item value="*.pro"/>
+				<item value="*.C"/>
+				<item value="*.ent"/>
+				<item value="*.upc"/>
+				<item value="*.wsdl"/>
+				<item value="*.lib"/>
+				<item value="*.mdtext"/>
+				<item value="*.confluence"/>
+				<item value="*.shtml"/>
+				<item value="*.xsl"/>
+				<item value="*.ecore"/>
+				<item value="*.xsd"/>
+				<item value="*.doc"/>
+				<item value="*.tracwiki"/>
+				<item value="*.cc"/>
+				<item value="*.emof"/>
+				<item value="*.dylib"/>
+				<item value="*.obj"/>
+				<item value="*.txt"/>
+				<item value="*.class"/>
+				<item value="*.qml"/>
+				<item value="*.mod"/>
+				<item value="*.properties"/>
+				<item value="*.out"/>
+				<item value="*.exe.bc"/>
+				<item value="*.md"/>
+				<item value="*.xslt"/>
+				<item value="*.dll"/>
+				<item value="*.asm"/>
+				<item value="*.jpage"/>
+				<item value="*.mediawiki"/>
+				<item value="*.e4xmi"/>
+				<item value="*.dtd"/>
+				<item value="*.ant"/>
+				<item value="*.h"/>
+				<item value="*.cxx"/>
+				<item value="*.htm"/>
+				<item value="*.html"/>
+				<item value="*.exsd"/>
+				<item value="*.ll"/>
+				<item value="*.s"/>
+				<item value="*.xml"/>
+				<item value="*.xmi"/>
+				<item value="*.exe"/>
+				<item value="*.macrodef"/>
+				<item value="*.o"/>
+				<item value="*.hh"/>
+				<item value="*.log"/>
+				<item value="*.cpp"/>
+				<item value="*.twiki"/>
+				<item value="*.elf"/>
+				<item value="*.pom"/>
+				<item value="*.hxx"/>
+				<item value="*.a"/>
+				<item value="*.textile"/>
+				<item value="*.c"/>
+				<item value="*.java"/>
+				<item value="*.docx"/>
+				<item value="*.mk"/>
+				<item value="*.hpp"/>
+				<item value="*.markdown"/>
+				<item value="*.pda"/>
+				<item value="*.S"/>
+				<item value="*.am"/>
+				<item value="*.jardesc"/>
+				<item value="*.c++"/>
+				<item value="*.patch"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="false" key="isRegExSearch"/>
+			<item value="Bool" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.C"/>
+				<item value="*.S"/>
+				<item value="*.a"/>
+				<item value="*.am"/>
+				<item value="*.ant"/>
+				<item value="*.asm"/>
+				<item value="*.bc"/>
+				<item value="*.c"/>
+				<item value="*.c++"/>
+				<item value="*.cc"/>
+				<item value="*.class"/>
+				<item value="*.class without source"/>
+				<item value="*.confluence"/>
+				<item value="*.cpp"/>
+				<item value="*.cxx"/>
+				<item value="*.dll"/>
+				<item value="*.doc"/>
+				<item value="*.docx"/>
+				<item value="*.dtd"/>
+				<item value="*.dylib"/>
+				<item value="*.e4xmi"/>
+				<item value="*.ecore"/>
+				<item value="*.elf"/>
+				<item value="*.emof"/>
+				<item value="*.ent"/>
+				<item value="*.exe"/>
+				<item value="*.exe.bc"/>
+				<item value="*.exsd"/>
+				<item value="*.h"/>
+				<item value="*.hh"/>
+				<item value="*.hpp"/>
+				<item value="*.htm"/>
+				<item value="*.html"/>
+				<item value="*.hxx"/>
+				<item value="*.jardesc"/>
+				<item value="*.java"/>
+				<item value="*.jpage"/>
+				<item value="*.lib"/>
+				<item value="*.ll"/>
+				<item value="*.log"/>
+				<item value="*.macrodef"/>
+				<item value="*.markdown"/>
+				<item value="*.md"/>
+				<item value="*.mdtext"/>
+				<item value="*.mediawiki"/>
+				<item value="*.mk"/>
+				<item value="*.mod"/>
+				<item value="*.o"/>
+				<item value="*.obj"/>
+				<item value="*.out"/>
+				<item value="*.patch"/>
+				<item value="*.pda"/>
+				<item value="*.pom"/>
+				<item value="*.prefs"/>
+				<item value="*.pro"/>
+				<item value="*.properties"/>
+				<item value="*.qml"/>
+				<item value="*.s"/>
+				<item value="*.shtml"/>
+				<item value="*.so"/>
+				<item value="*.textile"/>
+				<item value="*.tracwiki"/>
+				<item value="*.twiki"/>
+				<item value="*.txt"/>
+				<item value="*.upc"/>
+				<item value="*.wsdl"/>
+				<item value="*.xmi"/>
+				<item value="*.xml"/>
+				<item value="*.xsd"/>
+				<item value="*.xsl"/>
+				<item value="*.xslt"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isRegExSearch"/>
+			<item value="time.c" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.C"/>
+				<item value="*.S"/>
+				<item value="*.a"/>
+				<item value="*.am"/>
+				<item value="*.ant"/>
+				<item value="*.asm"/>
+				<item value="*.bc"/>
+				<item value="*.c"/>
+				<item value="*.c++"/>
+				<item value="*.cc"/>
+				<item value="*.class"/>
+				<item value="*.class without source"/>
+				<item value="*.confluence"/>
+				<item value="*.cpp"/>
+				<item value="*.cxx"/>
+				<item value="*.dll"/>
+				<item value="*.doc"/>
+				<item value="*.docx"/>
+				<item value="*.dtd"/>
+				<item value="*.dylib"/>
+				<item value="*.e4xmi"/>
+				<item value="*.ecore"/>
+				<item value="*.elf"/>
+				<item value="*.emof"/>
+				<item value="*.ent"/>
+				<item value="*.exe"/>
+				<item value="*.exe.bc"/>
+				<item value="*.exsd"/>
+				<item value="*.h"/>
+				<item value="*.hh"/>
+				<item value="*.hpp"/>
+				<item value="*.htm"/>
+				<item value="*.html"/>
+				<item value="*.hxx"/>
+				<item value="*.jardesc"/>
+				<item value="*.java"/>
+				<item value="*.jpage"/>
+				<item value="*.lib"/>
+				<item value="*.ll"/>
+				<item value="*.log"/>
+				<item value="*.macrodef"/>
+				<item value="*.markdown"/>
+				<item value="*.md"/>
+				<item value="*.mdtext"/>
+				<item value="*.mediawiki"/>
+				<item value="*.mk"/>
+				<item value="*.mod"/>
+				<item value="*.o"/>
+				<item value="*.obj"/>
+				<item value="*.out"/>
+				<item value="*.patch"/>
+				<item value="*.pda"/>
+				<item value="*.pom"/>
+				<item value="*.prefs"/>
+				<item value="*.pro"/>
+				<item value="*.properties"/>
+				<item value="*.qml"/>
+				<item value="*.s"/>
+				<item value="*.shtml"/>
+				<item value="*.so"/>
+				<item value="*.textile"/>
+				<item value="*.tracwiki"/>
+				<item value="*.twiki"/>
+				<item value="*.txt"/>
+				<item value="*.upc"/>
+				<item value="*.wsdl"/>
+				<item value="*.xmi"/>
+				<item value="*.xml"/>
+				<item value="*.xsd"/>
+				<item value="*.xsl"/>
+				<item value="*.xslt"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY6">
+			<item value="false" key="isRegExSearch"/>
+			<item value="time.h" key="textPattern"/>
+			<item value="1" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<item value="false" key="isWholeWord"/>
+			<list key="fileNamePatterns">
+				<item value="*.C"/>
+				<item value="*.S"/>
+				<item value="*.a"/>
+				<item value="*.am"/>
+				<item value="*.ant"/>
+				<item value="*.asm"/>
+				<item value="*.bc"/>
+				<item value="*.c"/>
+				<item value="*.c++"/>
+				<item value="*.cc"/>
+				<item value="*.class"/>
+				<item value="*.class without source"/>
+				<item value="*.confluence"/>
+				<item value="*.cpp"/>
+				<item value="*.cxx"/>
+				<item value="*.dll"/>
+				<item value="*.doc"/>
+				<item value="*.docx"/>
+				<item value="*.dtd"/>
+				<item value="*.dylib"/>
+				<item value="*.e4xmi"/>
+				<item value="*.ecore"/>
+				<item value="*.elf"/>
+				<item value="*.emof"/>
+				<item value="*.ent"/>
+				<item value="*.exe"/>
+				<item value="*.exe.bc"/>
+				<item value="*.exsd"/>
+				<item value="*.h"/>
+				<item value="*.hh"/>
+				<item value="*.hpp"/>
+				<item value="*.htm"/>
+				<item value="*.html"/>
+				<item value="*.hxx"/>
+				<item value="*.jardesc"/>
+				<item value="*.java"/>
+				<item value="*.jpage"/>
+				<item value="*.lib"/>
+				<item value="*.ll"/>
+				<item value="*.log"/>
+				<item value="*.macrodef"/>
+				<item value="*.markdown"/>
+				<item value="*.md"/>
+				<item value="*.mdtext"/>
+				<item value="*.mediawiki"/>
+				<item value="*.mk"/>
+				<item value="*.mod"/>
+				<item value="*.o"/>
+				<item value="*.obj"/>
+				<item value="*.out"/>
+				<item value="*.patch"/>
+				<item value="*.pda"/>
+				<item value="*.pom"/>
+				<item value="*.prefs"/>
+				<item value="*.pro"/>
+				<item value="*.properties"/>
+				<item value="*.qml"/>
+				<item value="*.s"/>
+				<item value="*.shtml"/>
+				<item value="*.so"/>
+				<item value="*.textile"/>
+				<item value="*.tracwiki"/>
+				<item value="*.twiki"/>
+				<item value="*.txt"/>
+				<item value="*.upc"/>
+				<item value="*.wsdl"/>
+				<item value="*.xmi"/>
+				<item value="*.xml"/>
+				<item value="*.xsd"/>
+				<item value="*.xsl"/>
+				<item value="*.xslt"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="SearchDialog.ScopePart">
+		<item value="0" key="scope"/>
+	</section>
+</section>

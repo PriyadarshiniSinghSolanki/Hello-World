@@ -1,0 +1,27 @@
+/*
+ * main_without_pointer.c
+ *
+ *  Created on: 12-Jul-2016
+ *      Author: Sys-5304
+ */
+#include <stdio.h>
+#include <string.h>
+/*Reverse the string without Pointer*/
+int main()
+{
+	char arr_str[100], arr_rev[100];
+	int len_str, len_rev;
+	printf("Enter the string:");
+	fflush( stdout );
+	scanf("%s",arr_str);
+	len_str= strlen(arr_str);
+	printf("%d",len_str);
+	fflush( stdout );
+	len_str= strlen(arr_str);
+	for(len_rev=0; len_rev<=len_str;len_rev++){
+		arr_rev[len_rev]= arr_str[len_str-1-len_rev];
+	}
+	printf("Reverse string is: %s", arr_rev);
+	return 0;
+}
+

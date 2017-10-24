@@ -1,0 +1,11 @@
+11:07:45 **** Incremental Build of configuration Debug for project min ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\min.obj" "..\\src\\min.c" 
+Cannot run program "cl": Launching failed
+
+Error: Program "cl" not found in PATH
+PATH=[C:\gcc1\bin]
+
+
+11:07:45 Build Finished (took 47ms)
+

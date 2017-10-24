@@ -1,0 +1,7 @@
+12:49:37 **** Rebuild of configuration Debug for project Try_Out_GeeksForGeeks_Sample ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Try_OutCodes.o" "..\\src\\Try_OutCodes.c" 
+gcc -o Try_Out_GeeksForGeeks_Sample.exe "src\\Try_OutCodes.o" 
+
+12:49:37 Build Finished (took 629ms)
+

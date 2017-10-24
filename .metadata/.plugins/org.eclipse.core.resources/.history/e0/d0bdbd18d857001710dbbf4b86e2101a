@@ -1,0 +1,25 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure{
+	int SR;
+	int rollNo;
+	char *name[50];
+}Student;
+
+int main(){
+	strcpy(Student.name, "Priyadarshini");
+	Student.SR = 1;
+	Student.rollNo = 101;
+
+	printf("%d %d %s", Student.SR, Student.rollNo,Student.name);
+	return 0;
+}

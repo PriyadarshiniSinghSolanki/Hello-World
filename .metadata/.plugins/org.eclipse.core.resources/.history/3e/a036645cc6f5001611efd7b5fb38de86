@@ -1,0 +1,22 @@
+/*Find Long consecutive sequence
+ * Input: arr[] = {36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}
+ * Output = 32,33,34,35,36 = 5*/
+
+#include <stdio.h>
+#include <stdlib.h>
+f( int x, int y);
+int i;
+int main() {
+
+	int j = 60;
+	i = 50;
+	f(i, j);
+	printf("%d %d", i, j);
+
+	return 0;
+}
+f( int x, int y) {
+	i = 100;
+	x = 10;
+	y = y + i;
+}

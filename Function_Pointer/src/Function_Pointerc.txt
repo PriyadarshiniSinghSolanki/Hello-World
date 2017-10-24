@@ -1,0 +1,42 @@
+/*
+ ============================================================================
+ Name        : Function_Pointer.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void Func() {
+	printf("Hello\n");
+}
+
+int Add(int a) {
+	int sum = 0;
+	sum = +a;
+	return sum;
+}
+
+void func_1(char *string) {
+	printf("%s\n", string);
+}
+
+int main() {
+	void (*Ptr_Func)();
+	int (*Ptr_Add)(int);
+	void (*Ptr_func_1)(char *);
+
+	Ptr_Func = Func;
+	Ptr_Add = Add;
+	Ptr_func_1 = func_1;
+
+	Ptr_Func();
+	printf("%d",Ptr_Add(5));
+	Ptr_func_1("Priya");
+
+	return 0;
+}

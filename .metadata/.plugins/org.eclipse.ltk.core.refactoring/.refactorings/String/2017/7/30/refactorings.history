@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;String/src/Own_Str_Fun_With_Pointer.c&apos; to &apos;Own_Str_Fun_With_Pointerc&apos;" description="Rename resource &apos;Own_Str_Fun_With_Pointer.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Own_Str_Fun_With_Pointer.c" name="Own_Str_Fun_With_Pointerc" stamp="1500973394605" updateReferences="true"/>
+</session>

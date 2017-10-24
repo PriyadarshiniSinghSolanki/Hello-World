@@ -1,0 +1,104 @@
+/*
+ * sample.c
+ *
+ *  Created on: 11-Sep-2017
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+struct {
+	int rollNumber;
+	char name[50];
+	char department[20];
+	char course[20];
+	int joiningYear;
+} Student[450];
+int sample(void) {
+	FILE *fp1;
+	int i, entry, choice;
+
+	fp1 = fopen("File.txt", "a+");
+	if (fp1 == NULL) {
+		printf("Unable open file \r\n");
+	}
+	fflush(stdout);
+	fflush(stdin);
+	printf("choose "
+			"1. for new entry.\r\n"
+			"2. for search from old entry.\r\n"
+			"3. for view the entry.\r\n");
+	scanf("%d", &choice);
+
+	switch (choice) {
+	case 1: {
+		fflush(stdout);
+		fflush(stdin);
+		printf("How many entry you want to do...");
+		scanf("%d", &entry);
+		for (i = 0; i < entry; ++i) {
+			scanf("%d %s %s %s %d", &Student[i].rollNumber, &Student[i].name,
+					&Student[i].department, &Student[i].course,
+					&Student[i].joiningYear);
+
+			fprintf(fp1, "%d\t%s\t%s\t%s\t%d\t\n", Student[i].rollNumber,
+					Student[i].name, Student[i].department, Student[i].course,
+					Student[i].joiningYear);
+		}
+	}
+
+		break;
+	case 2: {
+		int length, found;
+		char studentname[20];
+		fflush(stdout);
+		fflush(stdin);
+		printf("\nEnter student name: ");
+		scanf("%s", &studentname);
+		found = 0;
+		if ((fp1 = fopen("File.txt", "r")) == NULL) {
+			printf(" ! The File is Empty...\n\n");
+		} else {
+			while (!feof(fp1) && found == 0) {
+				fscanf(fp1, "\n%d\t%s\t%s\t%s\t%d\t", &Student[i].rollNumber,
+						&Student[i].name, &Student[i].department,
+						&Student[i].course, &Student[i].joiningYear);
+				length = strlen(Student[i].name);
+				if (Student[i].name[length] == studentname[length])
+					found = 1;
+			}
+		}
+		if (found) {
+			printf("\nThe record is found.");
+			printf(
+					"\nRoll no: %d\nName: %s\nDepartment: %s\nCourse: %s\nMark: %d \n",
+					Student[i].rollNumber, Student[i].name,
+					Student[i].department, Student[i].course,
+					Student[i].joiningYear);
+		} else {
+			printf("Not found...\n");
+			return 0;
+		}
+	}
+
+		break;
+	case 3: {
+		char c;
+		fflush(stdout);
+		fflush(stdin);
+		while ((c = fgetc(fp1)) != EOF) {
+			printf("%c", c);
+		}
+
+	}
+		break;
+	default:
+		break;
+	}
+
+	fclose(fp1);
+
+	return 0;
+}
+
+
+

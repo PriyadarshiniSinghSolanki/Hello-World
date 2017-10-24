@@ -1,0 +1,22 @@
+11:24:16 **** Incremental Build of configuration Debug for project UserInputValidation ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o UserInputValidation.o "..\\UserInputValidation.c" 
+..\UserInputValidation.c: In function 'main':
+..\UserInputValidation.c:17:2: error: invalid initializer
+  char str[100] = 123567;
+  ^
+..\UserInputValidation.c: In function 'ischar':
+..\UserInputValidation.c:78:24: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+   if ((*strptr >= 'A') && (*strptr <= 'Z') || (*strptr >= 'a') && (*strptr <= 'z')) {
+                        ^
+..\UserInputValidation.c: In function 'isnum':
+..\UserInputValidation.c:48:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\UserInputValidation.c: In function 'ischar':
+..\UserInputValidation.c:86:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+11:24:16 Build Finished (took 171ms)
+

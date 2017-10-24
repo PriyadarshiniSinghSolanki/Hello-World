@@ -1,0 +1,10 @@
+16:19:56 **** Incremental Build of configuration Debug for project Tree ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\try.o" "..\\src\\try.c" 
+..\src\try.c: In function 'main':
+..\src\try.c:14:6: warning: unused variable 'len1' [-Wunused-variable]
+  int len1 = strlen(str1);
+      ^
+gcc -o Tree.exe "src\\try.o" 
+Info: Nothing to build for Tree
+Info: Nothing to build for String

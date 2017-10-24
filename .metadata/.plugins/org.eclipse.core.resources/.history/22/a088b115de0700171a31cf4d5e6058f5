@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char** separatersInString(char* input1, int* output_size) {
+	static int i, j, len;
+	char** arr = malloc(*output_size * sizeof(char*));
+	char *s = '#';
+	while (*input1) {
+		if ((*input1 == '(') || (*input1 == '[') || (*input1 == '{')
+				|| (*input1 == ')') || (*input1 == ']') || (*input1 == '}')) {
+			*input1 = '#';
+			input1++;
+		}
+	}
+	while (*input1) {
+		if (*input1 == '#') {
+			input1++;
+			if (*input1 == '#') {
+
+			} else {
+				arr[i] = strtok(input1, s);
+				i++;
+			}
+		}
+	}
+		/*if (*input1 == '(') {
+			input1++;
+			len++;
+			while (*input1 != ')') {
+				arr[i] = (char *) malloc(strlen(input1) - 1);
+				strcpy(arr[i], input1);
+			}
+		}
+		input1++;
+		if (*input1 == '[') {
+			input1++;
+			len++;
+			while (*input1 != ']') {
+				i++;
+				arr[i] = (char *) malloc(strlen(input1) - 1);
+				strcpy(arr[i], input1);
+				while (*input1 != ']')
+					input1++;
+			}
+		}
+		input1++;
+		if (*input1 == '{') {
+			input1++;
+			len++;
+			while (*input1 != ']') {
+				i++;
+				arr[i] = (char *) malloc(strlen(input1) - 1);
+				strcpy(arr[i], input1);
+				while (*input1 != '}')
+					input1++;
+			}
+		}
+		input1++;
+	}
+	*output_size = len;*/
+	return arr;
+}
+
+int main() {
+	int output_size;
+	char** output;
+
+	char* ip1 = "(abc)[def]";
+
+	/*ip1 = (char *) malloc(512000 * sizeof(char));
+	 scanf("\n%[^\n]", ip1);*/
+	output = separatersInString(ip1, &output_size);
+	int output_i = 0;
+	for (output_i = 0; output_i < output_size; output_i++) {
+
+		printf("%s\n", output[output_i]);
+
+	}
+	return 0;
+}
+

@@ -1,0 +1,8 @@
+12:54:02 **** Incremental Build of configuration Debug for project ThristyCrow_Problem ****
+Info: Internal Builder is used for build
+gcc -o ThristyCrow_Problem.exe "src\\ThristyCrow_Problem.o" 
+c:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+
+12:54:02 Build Finished (took 328ms)
+

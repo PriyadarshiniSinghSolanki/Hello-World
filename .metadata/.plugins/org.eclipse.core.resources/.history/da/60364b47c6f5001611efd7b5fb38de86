@@ -1,0 +1,19 @@
+/*Find Long consecutive sequence
+ * Input: arr[] = {36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}
+ * Output = 32,33,34,35,36 = 5*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	int arr[] = { 36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42 };
+	int var, cnt = 0, i;
+	printf("size of arr : %d", sizeof(arr));
+	for (var = 0; var < sizeof(arr); var++) {
+		for (i = 0; i < sizeof(arr); i++) {
+			if (arr[i+1] == arr[var]+1) {
+				cnt++;
+			}
+		}
+	}
+	return 0;
+}

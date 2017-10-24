@@ -1,0 +1,34 @@
+/*
+ * tryFunction_ptr.c
+ *
+ *  Created on: 25-Jul-2017
+ *      Author: Sys-5304
+ */
+
+#include<stdio.h>
+void print(char *string) {
+	printf("%s", string);
+}
+int func(int x, int y, void (*ptr) (char* str)) {
+	ptr("Hello\n");
+	return x + y;
+}
+
+int main(void) {
+	int result;
+	/* calling a function named func */
+	int (*func1)(int, int, char*);
+	void (*ptr)(char*);
+
+	func1 = func;
+	ptr = print;
+
+
+	result = (*func1)(10, 20, ptr);
+	printf("result = %d\n", result);
+	return 0;
+}
+
+/* func definition goes here */
+
+

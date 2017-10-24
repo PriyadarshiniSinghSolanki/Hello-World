@@ -1,0 +1,12 @@
+10:26:22 **** Incremental Build of configuration Debug for project er ****
+Info: Configuration "Debug" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\er.o" "..\\src\\er.c" 
+Cannot run program "gcc": Launching failed
+
+Error: Program "gcc" not found in PATH
+PATH=[\bin;\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\OrCAD\OrCAD_16.6_Lite\tools\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\specctra\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\PSpice;C:\OrCAD\OrCAD_16.6_Lite\tools\Capture;C:\OrCAD\OrCAD_16.6_Lite\tools\fet\bin;C:\OrCAD\OrCAD_16.6_Lite\tools\pcb\bin;C:\OrCAD\OrCAD_16.6_Lite\OpenAccess\bin\win32\opt;C:\Program Files\Java\jdk1.7.0_75\bin;C:\Program Files (x86)\Flash Magic;C:\Users\Sys-5304\AppData\Local\Android\sdk;C:\Program Files (x86)\Microsoft VS Code\bin]
+
+
+10:26:22 Build Finished (took 47ms)
+

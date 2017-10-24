@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Shortest_Path/src/Shortest_Path.c&apos; to &apos;Shortest_Pathc&apos;" description="Rename resource &apos;Shortest_Path.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Shortest_Path.c" name="Shortest_Pathc" stamp="1481256531245" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Shortest_Path/src/Shortest_Pathc&apos; to &apos;Shortest_Path.c&apos;" description="Rename resource &apos;Shortest_Pathc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Shortest_Pathc" name="Shortest_Path.c" stamp="1481257311798" updateReferences="true"/>
+</session>

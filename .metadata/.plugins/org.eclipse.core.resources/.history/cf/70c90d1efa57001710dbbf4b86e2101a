@@ -1,0 +1,38 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+/* Program 5.2 from PTRTUT10.HTM 6/13/97 */
+#include <stdio.h>
+#include <string.h>
+
+struct tag { /* the structure type */
+	char lname[20]; /* last name */
+	char fname[20]; /* first name */
+	int age; /* age */
+	float rate; /* e.g. 12.75 per hour */
+};
+
+struct tag my_struct; /* define the structure */
+
+void show_name(struct tag *p); /* function prototype */
+
+int main(void) {
+	struct tag *st_ptr; /* a pointer to a structure */
+	st_ptr = &my_struct; /* point the pointer to my_struct */
+	strcpy(st_ptr->lname, "Jensen");
+	strcpy(st_ptr->fname, "Ted");
+	printf("1\n%s ", st_ptr->fname);
+	printf("2%s\n", st_ptr->lname);
+	my_struct.age = 63;
+	show_name(st_ptr); /* pass the pointer */
+	return 0;
+}
+void show_name(struct tag *p) {
+	printf("3\n%s ", p->fname); /* p points to a structure */
+	printf("4%s ", p->lname);
+	printf("5%d\n", p->age);
+}
+

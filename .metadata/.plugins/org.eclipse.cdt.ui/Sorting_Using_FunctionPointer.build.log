@@ -1,0 +1,7 @@
+12:49:36 **** Incremental Build of configuration Debug for project Sorting_Using_FunctionPointer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sorting_Using_FunctionPointer.o" "..\\src\\Sorting_Using_FunctionPointer.c" 
+gcc -o Sorting_Using_FunctionPointer.exe "src\\Sorting_Using_FunctionPointer.o" 
+
+12:49:37 Build Finished (took 685ms)
+

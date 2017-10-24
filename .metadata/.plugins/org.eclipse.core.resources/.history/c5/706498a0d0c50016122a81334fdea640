@@ -1,0 +1,138 @@
+/*How to count set bits in a floating point number in C?
+Implement your own itoa()
+Write a C program that does not terminate when Ctrl+C is pressed
+Print a long int in C using putchar() only
+Convert a floating point number to string in C
+How to write a running C code without main()?
+Write your own memcpy()*/
+
+#if 0
+/*How to find length of a string without string.h and loop in C?*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char str[6] = "hello";
+	return (printf("\nLen : %d", printf("%s", str)));
+	return 0;
+}
+
+/*How to change the output of printf() in main() ?*/
+#include <stdio.h>
+#include <stdlib.h>
+
+void fun() {
+#define printf(x,y) printf(x,10);
+}
+
+int main() {
+	char var = 20;
+	printf("%d", var);
+	return 0;
+}
+
+
+/*How to measure time taken by a function in C?*/
+/*To calculate time taken by a process, we can use clock() function which is available time.h.
+ * We can call the clock function at the beginning and end of the code, subtract the values,
+ * and then divide by CLOCKS_PER_SEC (the number of clock ticks per second) to get processor time*/
+
+/* clock example: frequency of primes */
+#include <stdio.h>      /* printf */
+#include <time.h>       /* clock_t, clock, CLOCKS_PER_SEC */
+#include <math.h>       /* sqrt */
+
+int frequency_of_primes(int n) {
+	int i, j;
+	int freq = n - 1;
+	for (i = 2; i <= n; ++i)
+		for (j = sqrt(i); j > 1; --j)
+			if (i % j == 0) {
+				--freq;
+				break;
+			}
+	return freq;
+}
+
+int main() {
+
+	clock_t time = clock();
+	printf("Calculating...\n");
+	int f = frequency_of_primes(99999);
+	printf("The number of primes lower than 100,000 is: %d\n", f);
+	time = clock() - time;
+	double t_Taken = (double) time / CLOCKS_PER_SEC;
+	printf("It took me %lf clicks (%lf seconds).\n", t_Taken,
+			((float) t_Taken) / CLOCKS_PER_SEC);
+	return 0;
+}
+
+
+/* A C program that does not terminate when Ctrl+C is pressed */
+/*Signals are software generated interrupts that are sent to a process when a event happens.
+ * C standard defines following 6 signals in signal.h header file.
+ SIGABRT – abnormal termination.
+ SIGFPE – floating point exception.
+ SIGILL – invalid instruction.
+ SIGINT – interactive attention request sent to the program.
+ SIGSEGV – invalid memory access.
+ SIGTERM – termination request sent to the program.*/
+#include <stdio.h>
+#include <signal.h>
+
+/* Signal Handler for SIGINT */
+void sigintHandler(int sig_num) {
+	/* Reset handler to catch SIGINT next time.*/
+	signal(SIGINT, sigintHandler);
+	printf("\n Cannot be terminated using Ctrl+C \n");
+	return;
+}
+
+int main() {
+	/* Set the SIGINT (Ctrl-C) signal handler to sigintHandler
+	 Refer http://en.cppreference.com/w/c/program/signal */
+	signal(SIGINT, sigintHandler);
+	while (1) {
+	}
+	return 0;
+}
+#endif
+
+/* A C++ program to implement itoa() */
+#include <stdio.h>
+#include <stdlib.h>
+
+// Implementation of itoa()
+char* itoa(int num, char* str, int base) {
+	int rem, result = 0;
+	if (base == 10) {
+		sprintf(str, "%d", num);
+		return str;
+	}
+	printf("g");
+	if (base == 8) {
+		printf("hello");
+		/*while (num != 1) {
+			printf("hi");
+			rem = num % base;
+			num = num / base;
+			result = (result * 10) + rem;
+		}*/
+		/*printf(("hola"));
+		sprintf(str, "%d", result);
+		return str;*/
+	}
+	return "bye";
+}
+
+// Driver program to test implementation of itoa()
+int main() {
+	char str[100];
+	itoa(1567, str, 8);
+//	printf("Base:%s ", itoa(1567, str, 10));
+//	printf("Base:%s ", itoa(-1567, str, 10));
+//	printf("Base:%s ", itoa(1567, str, 2));
+//	printf("Base:%s ", itoa(1567, str, 8));
+//	printf("Base:%s ", itoa(1567, str, 16));
+	return 0;
+}

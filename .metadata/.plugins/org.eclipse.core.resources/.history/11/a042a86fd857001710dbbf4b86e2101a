@@ -1,0 +1,26 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure{
+	int SR;
+	int rollNo;
+	char *name;
+}Student;
+
+int main(){
+	Student.name = (char*)malloc(sizeof(char*));
+	strcpy((char*)Student.name, "Priyadarshini Singh Solanki");
+	Student.SR = 1;
+	Student.rollNo = 101;
+
+	printf("%d %d %s", Student.SR, Student.rollNo,(char*)Student.name);
+	return 0;
+}

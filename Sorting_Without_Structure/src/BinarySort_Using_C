@@ -1,0 +1,45 @@
+/*
+ ============================================================================
+ Name        : Basic_Operation_DataStructure.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Basic Operation in Data Structure-
+				1. Traversing
+				2. Searching
+				3. Insertion
+				4. Deletion
+				5. Sorting
+				6. Merging
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 20
+
+int intArray[MAX] = { 1, 2, 3, 4, 6, 7, 9, 11, 12, 14, 15, 16, 17, 19, 33, 34, 43, 45, 55, 66 };
+int find(int data) {
+	int result = 0, low, high, mid;
+	low = 0;
+	high = sizeof(intArray) / sizeof(intArray[0]);
+
+	while (result != data) {
+		result = intArray[mid];
+		if (result == data) {
+			result = mid;
+			break;
+		} else if (result > data) {
+			high = mid - 1;
+		} else {
+			low = mid + 1;
+		}
+		mid = low + ((high - low) / 2);
+	}
+	return result;
+}
+int main() {
+	printf("%d", find(12));
+	return 0;
+}

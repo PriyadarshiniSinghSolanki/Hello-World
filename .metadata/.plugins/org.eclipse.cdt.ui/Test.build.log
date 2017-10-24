@@ -1,0 +1,6 @@
+11:09:29 **** Incremental Build of configuration Debug for project Test ****
+Info: Internal Builder is used for build
+gcc -o Test "src\\Test.o" 
+
+11:09:29 Build Finished (took 131ms)
+

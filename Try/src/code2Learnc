@@ -1,0 +1,45 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int GetJumpCount(int input1, int input2, int input3_size, int* input3) {
+	static int jump;
+	int var, sum;
+	for (var = 0; var < input3_size; ++var) {
+		sum = input3[var] - input1;
+		jump++;
+
+		while (sum >= input1) {
+			sum = sum - input1;
+			jump++;
+		}
+		if ((sum < input1) && (sum != 0)) {
+			jump++;
+		}
+	}
+	jump++;
+	return jump;
+}
+int main() {
+	int output = 0;
+	int ip1;
+	scanf("%d", &ip1); //5
+	int ip2;
+	scanf("%d", &ip2); //1
+	int ip3_size = 5;
+	int ip3_i;
+	scanf("%d\n", &ip3_size); //2
+	int ip3[ip3_size];
+	for (ip3_i = 0; ip3_i < ip3_size; ip3_i++) {
+	 int ip3_item;
+	 scanf("%d", &ip3_item); //9,10
+
+	 ip3[ip3_i] = ip3_item;
+	 }
+	output = GetJumpCount(ip1, ip2, ip3_size, ip3);
+	printf("%d\n", output);
+	return 0;
+}

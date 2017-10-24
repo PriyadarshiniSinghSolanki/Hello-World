@@ -1,0 +1,54 @@
+/*
+ * InsertionSort.c
+ *
+ *  Created on: 19-Sep-2017
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int arr[7] = { 4, 6, 3, 2, 1, 9, 7 };
+int main() {
+	int i, value, counter;
+	for (i = 0; i < 7; i++) {
+		value = arr[i];
+		counter = i;
+		while ((counter > 0) && (arr[counter - 1] > value)) {
+			arr[counter] = arr[counter - 1];
+			counter--;
+		}
+		if (counter != i) {
+			arr[counter] = value;
+		}
+	}
+	for (i = 0; i < 7; ++i) {
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
+/*MINE*/
+#if 0
+		int i = 0, j, k, sort = 0, temp;
+		if (sort == 0) {
+			if (arr[i] > arr[i + 1]) {
+				temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+				sort = 1;
+			}
+		}
+		if (sort == 1) {
+			for (j = 0; j < i; ++j) {
+				for (k = 0; k < i; ++k) {
+					if (arr[k] > arr[k + 1]) {
+						temp = arr[k];
+						arr[k] = arr[k + 1];
+						arr[k + 1] = temp;
+					}
+				}
+			}
+			sort = 0;
+		}
+#endif
+

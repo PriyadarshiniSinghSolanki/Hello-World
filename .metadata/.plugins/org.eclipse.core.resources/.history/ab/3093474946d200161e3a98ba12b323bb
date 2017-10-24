@@ -1,0 +1,60 @@
+/*
+ ============================================================================
+ Name        : Try.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Try, your code First here
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 25
+struct stack {
+	int top;
+	int array[SIZE];
+}S1;
+
+void initialize(struct stack address) {
+	address.top = -1;
+}
+void push(struct stack address, int data) {
+	if (address.top == SIZE - 1) {
+		printf("Stack is empty\n");
+		return;
+	}
+	address.top++;
+	address.array[address.top] = data;
+}
+int pop(struct stack address) {
+	int val;
+	if (address.top <= 0) {
+		printf("Stack is empty\n");
+		return 1;
+	}
+	val = address.array[address.top];
+	address.top--;
+	return val;
+}
+void printStack(struct stack address) {
+	int i;
+	for (i = address.top; i >= 0; i--) {
+		printf("%d\n", address.array[i]);
+	}
+}
+
+struct stack ptr;
+int main(void) {
+	initialize(&S1);
+	push(&S1,1);
+	push(&S1,2);
+	push(&S1,3);
+	push(&S1,4);
+	pop(&S1);
+	push(&S1,5);
+	pop(&S1);
+	printStack(&S1);
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,8 @@
+1	AppliedMaths	PD	1000	0	$
+2	Science	PD	1000	0	$
+3	History	PD	1000	1	$
+4	Biology	Aditi	48	0	$
+5	Social	PD	1000	1	$
+6	Hindi	Priyadarshini	1000	0	$
+7	English	PD	16	0	$
+8	AppliedMaths	PD	1000	1	$

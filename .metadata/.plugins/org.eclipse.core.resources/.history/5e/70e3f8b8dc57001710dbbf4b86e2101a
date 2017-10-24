@@ -1,0 +1,36 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct structure {
+	int SR;
+	int rollNo;
+	char name[50];
+} Student1, Student2;
+struct structure *details;
+void printstudent(struct structure *details){
+	printf(("%d "), details->SR);
+	printf(("%d "), details->rollNo);
+	printf(("%s\n"), details->name);
+}
+int main() {
+	strcpy((char*) Student1.name, "Priyadarshini");
+	Student1.SR = 1;
+	Student1.rollNo = 101;
+	details = &Student1;
+	strcpy((char*) Student2.name, "Priya");
+	Student2.SR = 2;
+	Student2.rollNo = 102;
+	details = &Student2;
+//	printf("%d %d %s", Student.SR, Student.rollNo, (char*) Student.name);
+	printstudent(&Student1);
+	printstudent(&Student2);
+	return 0;
+}

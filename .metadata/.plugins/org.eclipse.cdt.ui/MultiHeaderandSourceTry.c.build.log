@@ -1,0 +1,5 @@
+15:29:09 **** Clean-only build of configuration Debug for project MultiHeaderandSourceTry.c ****
+rm -rf src/file1.o src/MultiHeaderandSourceTry.d src/file1.d MultiHeaderandSourceTry.c.exe src/MultiHeaderandSourceTry.o 
+
+15:29:09 Build Finished (took 172ms)
+

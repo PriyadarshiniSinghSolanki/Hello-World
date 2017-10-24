@@ -1,0 +1,74 @@
+/*
+ ============================================================================
+ Name        : Pointer.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/*#define M 3
+#define N 3
+
+void print(int (*arr)[N])
+{
+
+    printf("%d",(**arr+1));
+}
+
+int main()
+{
+    int arr[M][N] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    print(arr);
+    return 0;
+}*/
+
+#if 0
+int main() {
+	int arr[3] = {1, 2, 3};
+	int arr1[2][3] = { { 1, 2, 3 }, { 4, 5, 6 } };
+	int arr2[2][2][2] = { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } };
+	int *ptr;
+	int (*ptr2)[2][2] = arr2;
+	int (*ptr1)[3] = arr1;
+	 ptr = arr;
+	 ptr1 = arr1;
+	 ptr2 = *arr2[2][2];
+	/*arr1 = &arr1[0];
+	arr1+1 = &arr1[1];
+	*arr1 = &arr[0][0];
+	*arr1+1 = &arr[0][1];
+	*(*arr+1)= data at arr[0][1];*/
+	printf("%d %d %d \n", arr, *arr, arr[0]); //,*ptr1+1,*ptr1+1); arr1 = &arr[0]
+	printf("%d %d %d %d %d %d %d %d\n", arr1,*arr1,&arr1,arr1+1,*arr1+1,*(*arr1),*(*arr1+1), *(*(arr1+1)+2));
+	printf("%d \n", *(*ptr1+1));//,*(*(ptr1+1)));
+	printf("%d %d %d %d %d \n", arr2, *arr2, arr2[0], *arr2 + 1, *(arr2 + 1));
+	printf("%d",ptr2, *ptr);
+	return 0;
+}
+#endif
+
+
+void func(char *str){
+	printf("HEllo %s\n",str);
+}
+int add(int a, int b){
+	return (a+b);
+}
+int main(){
+	void(*ptr)(char*);
+	ptr=func;
+	(*ptr)("Priya");
+	int (*add_Ptr) (int , int);
+	add_Ptr= add;
+	int sum;
+	sum = (*add_Ptr)(2,3);
+	printf("%d",sum);
+
+	return 0;
+}

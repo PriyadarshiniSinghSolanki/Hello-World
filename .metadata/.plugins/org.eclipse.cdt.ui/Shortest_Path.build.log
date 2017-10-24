@@ -1,0 +1,8 @@
+09:51:57 **** Incremental Build of configuration Debug for project Shortest_Path ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Shortest_Path.o" "..\\src\\Shortest_Path.c" 
+gcc -o Shortest_Path.exe "src\\Shortest_Path.o" "src\\Copy of Shortest_Path.o" 
+gcc: error: src\Copy of Shortest_Path.o: No such file or directory
+
+09:51:57 Build Finished (took 258ms)
+

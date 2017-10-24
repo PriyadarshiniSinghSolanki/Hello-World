@@ -1,0 +1,29 @@
+/*
+ * main.c
+ *
+ *  Created on: 09-Jul-2016
+ *      Author: Sys-5304
+ */
+#include <stdio.h>
+#include <string.h>
+
+/*Reverse the string using Pointer*/
+int main()
+{
+	char arr_str[100], arr_rev[100];
+	int len_str, len_rev = 0;
+	printf("Enter the string:");
+	fflush( stdout );
+	scanf("%s",arr_str);
+	len_str = strlen(arr_str);
+
+	int *ptr_str= (int*)arr_str;
+
+	while (ptr_str != '\0'){
+		arr_rev[len_rev] = arr_str[len_str-1-len_rev];
+		len_rev++;
+	}
+	printf("Reverse string is: %s", arr_rev);
+	fflush( stdout );
+	return 0;
+}

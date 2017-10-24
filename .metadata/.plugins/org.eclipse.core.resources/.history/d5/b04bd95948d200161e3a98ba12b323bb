@@ -1,0 +1,52 @@
+/*
+ ============================================================================
+ Name        : Try.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Try, your code First here
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 25
+struct Linklist {
+	int data;
+	struct Linklist *next;
+};
+
+void push(struct Linklist **head_ref, int new_data) {
+	struct Linklist *new_node = (struct Linklist*) malloc(
+			sizeof(struct Linklist));
+	new_node->data = new_data;
+	if(*head_ref == NULL){
+		new_node->next = NULL;
+	}else
+		new_node->next = *head_ref;
+	*head_ref = new_node;
+	return;
+}
+void pop(struct Linklist **head_ref) {
+
+}
+void printStack(struct Linklist *n) {
+	while (n != NULL) {
+		printf("%d\n", n->data);
+		n = n->next;
+	}
+}
+
+int main(void) {
+	struct Linklist *head = (struct Linklist*) malloc(sizeof(struct Linklist));
+	push(&head, 1);
+	push(&head, 2);
+	push(&head, 3);
+	push(&head, 4);
+//	pop(&head);
+	push(&head, 5);
+//	pop(&head);
+	printStack(head);
+	return EXIT_SUCCESS;
+}

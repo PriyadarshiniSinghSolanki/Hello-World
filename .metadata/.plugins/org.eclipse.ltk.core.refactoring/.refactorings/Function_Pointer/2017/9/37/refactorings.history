@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Function_Pointer/src/Practice_FP.c&apos; to &apos;Practice_FPc&apos;" description="Rename resource &apos;Practice_FP.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Practice_FP.c" name="Practice_FPc" stamp="1505284084164" updateReferences="true"/>
+</session>

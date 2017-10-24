@@ -1,0 +1,35 @@
+/*
+ * try.c
+ *
+ *  Created on: 21-Dec-2016
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+int arr[10] = { 3, 6, 1, 2, 3, 8, 4, 1, 7, 2 };
+void bubble(int a[], int N) {
+	int i, j, temp;
+	for (i = 0; i < N; ++i) {
+		for (j = i + 1; j < N; ++j) {
+			if (a[i] > a[j]) {
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+int main(void) {
+	int i;
+	putchar('\n');
+	for (i = 0; i < 10; i++) {
+		printf("%d ", arr[i]);
+	}
+	bubble(arr, 10);
+	putchar('\n');
+	for (i = 0; i < 10; i++) {
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
+

@@ -1,0 +1,214 @@
+/*
+ ============================================================================
+ Name        : Misc.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+/* Little and Big Endian Mystery*/
+#include <stdio.h>
+int main() {
+	int i = 0x23451232;
+	char *c = (char*) &i;
+	printf("0x%02x", *c);
+	if (*c == 0x32)
+		printf(" - machine is little endian");
+	/*convert LE to BE*/
+	int byte1 = (i & 0xFF000000) << 0;
+	printf("\n%0x", byte1);
+	int byte2 = (i & 0x00FF0000) << 8;
+	printf("\n%0x", byte2);
+	int byte3 = (i & 0x0000FF00) << 16;
+	printf("\n%0x", byte3);
+	int byte4 = (i & 0x000000FF) << 24;
+	printf("\n%0x", byte4);
+	printf("\n%0x",
+			(byte1 >> 0) | (byte2 >> 8) | (byte3 >> 16) | (byte4 >> 24));
+	return 0;
+}
+
+// PROGRAM 1
+#include <stdio.h>
+int f1() {
+	printf("Geeks");
+	return 1;
+}
+int f2() {
+	printf("forGeeks");
+	return 1;
+}
+int main() {
+	int p = f1() + f2();
+	return 0;
+}
+/*Answer: GeeksforGeeks*/
+
+// PROGRAM 2
+#include <stdio.h>
+int x = 20;
+int f1() {
+	x = x + 10;
+	return x;
+}
+int f2() {
+	x = x - 5;
+	return x;
+}
+int main() {
+	int p = f1() + f2();
+	printf("p = %d", p);
+	return 0;
+}
+/*Answer: 55 i.e(30+25)*/
+
+// PROGRAM 3
+#include <stdio.h>
+int main() {
+	int i = 8;
+	int p = i++ * i++;
+	printf("%d\n", p);
+}
+/*Answer: 72 (8*9)*/
+
+/*Quine – A self-reproducing program*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	char *s = "main(){char *s=%c%s%c;printf(s,34,s,34);}";
+	printf(s, 34, s, 34);
+	return EXIT_SUCCESS;
+}
+/* Little and Big Endian Mystery*/
+#include <stdio.h>
+int main() {
+	char *c;
+	int i = 1;
+	*c = &i;
+	printf("%x", *c);
+	return 0;
+}
+
+
+/*Program to validate an IP address*/
+#include <stdio.h>
+#include <strings.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int is_valid_ip(char *str_ip);
+int is_valid_num(char *str_num);
+int is_valid_token(char *str_dec);
+
+int main() {
+	char ip1[] = "128.0.0.1";
+	char ip2[] = "125.b6.100.1";
+	char ip3[] = "125.512.100.1";
+	char ip4[] = "125.512.100.abc";
+	is_valid_ip(ip1) ? printf("ip1 is valid\n") : printf("ip1 is not valid\n");
+	is_valid_ip(ip2) ? printf("ip2 is valid\n") : printf("ip2 is not valid\n");
+	is_valid_ip(ip3) ? printf("ip3 is valid\n") : printf("ip3 is not valid\n");
+	is_valid_ip(ip4) ? printf("ip4 is valid\n") : printf("ip4 is not valid\n");
+
+	return 0;
+}
+int is_valid_ip(char *str_ip) {
+	if ((is_valid_token(str_ip)) == true)
+		return 1;
+	else
+		return 0;
+	return 0;
+}
+int is_valid_num(char *str_num) {
+	while (*str_num) {
+		if ((*str_num >= '0') && (*str_num <= '9'))
+			str_num++;
+		else
+			return 0;
+	}
+	return 1;
+}
+
+int is_valid_token(char *str_dec) {
+	int cnt = 0;
+	bool is_dot = false;
+	bool is_token = false;
+	bool is_valid = false;
+	char *token;
+	token = strtok(str_dec, ".");
+
+	/* walk through other tokens */
+	while (token != NULL) {
+		int int_tok = atoi(token);
+		if ((int_tok >= 0) && (int_tok <= 255)) {
+			if (is_valid_num(token) == true) {
+				cnt++;
+				token = strtok(NULL, ".");
+				is_token = true;
+			} else {
+				is_valid = false;
+				return is_valid;
+			}
+		} else {
+			is_valid = false;
+			return is_valid;
+		}
+	}
+	if (cnt == 4)
+		is_dot = true;
+
+	if ((is_token == true) && (is_dot == true))
+		is_valid = true;
+
+	return is_valid;
+}
+
+#include <stdio.h>
+// Assume base address of "GeeksQuiz" to be 1000
+int main() {
+	printf(5 + "GeeksQuiz");
+	return 0;
+}
+
+/*
+ Answer: Quiz 
+ printf is a library function defined under stdio.h header file.
+ The compiler adds 5 to the base address of the string through the expression 5 + "GeeksQuiz" . 
+ Then the string "Quiz" gets passed to the standard library function as an argument.*/
+
+#include <stdio.h>
+int main()
+{
+   printf("\new_c_question\by");
+   printf("\rgeeksforgeeks");
+   return 0;
+}
+
+<setjmp.h>
+setjmp(buf); set jump single return 0;
+longjmp(buf,1); back to set jmp and setjmp return 1
+
+#include<srtjmp.h>
+static jmp_buf buf;
+main(){
+	volatile int b;
+	b = 3;
+	if(setjmp(buf)!=0){ //1. return zero, terminate loop and init b=5
+		printf("%d",b);
+		exit(0);
+	}
+	b=5; //2.
+	lonfjmp(buf,1);//3. setjmp return non zero
+	//4. go inside setjmp loop and print value of b;
+}
+
+/* Comparator function of qsort() in C
+ Multithreading in C
+ Assertions in C/C++
+ fork() in C
+ Interesting Facts in C Programming
+ Precision of floating point numbers in C++ (floor(), ceil(), trunc(), round() and setprecision())*/

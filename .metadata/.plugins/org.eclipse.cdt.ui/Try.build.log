@@ -1,0 +1,11 @@
+11:17:05 **** Incremental Build of configuration Debug for project Try ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ttryy.o" "..\\src\\ttryy.c" 
+..\src\ttryy.c: In function 'main':
+..\src\ttryy.c:24:9: warning: unused variable 'i' [-Wunused-variable]
+     int i, n,v;
+         ^
+gcc -o Try.exe "src\\ttryy.o" 
+
+11:17:07 Build Finished (took 1s.269ms)
+

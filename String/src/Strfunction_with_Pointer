@@ -1,0 +1,36 @@
+/*
+ * Strcpy.c
+ *
+ *  Created on: 12-Jul-2016
+ *      Author: Sys-5304
+ */
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char arr_str1[20], arr_str2[20];
+	char *ptr_str1 = arr_str1;
+	char *ptr_str2 = arr_str2;
+	printf("Enter string 1:");
+	fflush( stdout);
+	scanf("%s", ptr_str1);
+
+	printf("Enter string 2:");
+	fflush( stdout);
+	scanf("%s", ptr_str2);
+
+	strcpy(ptr_str1,ptr_str2);
+	printf("After Copy String 1 is:%s\r\n",arr_str1);
+
+	int Cmpresult = (strcmp(ptr_str1, ptr_str2));
+	if (Cmpresult)
+		printf("String 1 and String 2 Mismatch\r\n");
+	else
+		printf("String 1 and String 2 Match\r\n");
+
+	strcat(ptr_str1,ptr_str2);
+	printf("After Concatenation String 1 is:%s",ptr_str1);
+
+	return 0;
+}
+

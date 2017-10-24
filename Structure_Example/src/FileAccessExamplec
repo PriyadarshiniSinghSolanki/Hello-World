@@ -1,0 +1,98 @@
+/*
+ * FileAccessExample.c
+ *
+ *  Created on: 13-Sep-2017
+ *      Author: Sys-5304
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*
+  Write a menu driven program that depicts the working of a library. The menu options should be:
+ 1. Add book information
+ 2. Display book information
+ 3. List all books of given author
+ 4. List the title of specified book
+ 5. List the count of books in the library
+ 6. List the books in the order of accession number
+ 7. Exit*/
+struct Info {
+	int accessionNumber;
+	char title[50];
+	char author[50];
+	int price;
+	int flag; //0 = issued
+}Book;
+int main(void) {
+	int choice;
+	char title[50],word[50];
+	printf("Enter your choice:"
+			"1. Add book information\r\n"
+			"2. Display book information\r\n"
+			"3. List all books of given author\r\n"
+			"4. List the title of specified book\r\n"
+			"5. List the count of books in the library\r\n"
+			"6. List the books in the order of accession number\r\n"
+			"7. Exit\r\n");
+	fflush(stdout);
+	scanf("%d", &choice);
+	fflush(stdin);
+	FILE *fp1;
+	fp1 = fopen("libRecord.txt","a+");
+	if(fp1 == NULL){
+		printf("file cant open");
+		EXIT_SUCCESS;
+	}
+	switch (choice) {
+	case 1:
+		printf("Enter book info: accessionNumber, title[50], author[50],price");
+		fflush(stdout);
+		scanf("%d %s %s %d",&Book.accessionNumber, &Book.title, &Book.author, &Book.price);
+		Book.flag=0;
+		fprintf(fp1,"%d\t%s\t%s\t%d\t%d\t$",Book.accessionNumber, Book.title, Book.author, Book.price,Book.flag);
+		fclose(fp1);
+		break;
+	case 2:
+		printf("Enter book title");
+		fflush(stdout);
+		char ch;
+		scanf("%s", &title);
+		int len;
+		len = strlen(title);
+		fflush(stdin);
+		while (fscanf(fp1, "%s", word) != EOF) {
+			if (strcmp(title, word) == 0) {
+				fseek(fp1, -(len+2), SEEK_CUR);
+				while ((ch = fgetc(fp1)) != '$') {
+					printf("%c", ch);
+					fflush(stdout);
+				}
+				printf("\r\n");
+			}
+		}
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+
+		break;
+	case 6:
+
+		break;
+	case 7:
+
+		break;
+	default:
+		break;
+	}
+
+	return 0;
+}
+
+

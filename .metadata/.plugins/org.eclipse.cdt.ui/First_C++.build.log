@@ -1,0 +1,7 @@
+11:16:45 **** Rebuild of configuration Debug for project First_C++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\First_C++.o" "..\\src\\First_C++.cpp" 
+g++ -o First_C++.exe "src\\First_C++.o" 
+
+11:17:00 Build Finished (took 15s.165ms)
+

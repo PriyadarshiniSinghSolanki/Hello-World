@@ -1,0 +1,34 @@
+/*
+ * Strfunction_without_Pointer.c
+ *
+ *  Created on: 13-Jul-2016
+ *      Author: Sys-5304
+ */
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char arr_str1[20], arr_str2[20];
+	printf("Enter string 1:");
+	fflush( stdout);
+	scanf("%s", arr_str1);
+
+	printf("Enter string 2:");
+	fflush( stdout);
+	scanf("%s", arr_str2);
+	strcpy(arr_str1,arr_str2);
+	printf("After Copy String 1 is:%s\r\n",arr_str1);
+
+	int Cmpresult = strcmp(arr_str1, arr_str2);
+	if (Cmpresult)
+		printf("String 1 and String 2 Mismatch\r\n");
+	else
+		printf("String 1 and String 2 Match\r\n");
+
+	strcat(arr_str1,arr_str2);
+	printf("After Concatenation String 1 is:%s",arr_str1);
+
+	return 0;
+}
+
+

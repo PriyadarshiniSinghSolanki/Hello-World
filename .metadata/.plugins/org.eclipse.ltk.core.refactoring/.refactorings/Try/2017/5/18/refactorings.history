@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Try/src/non_repeating_char.c&apos; to &apos;tryy.c&apos;" description="Rename resource &apos;non_repeating_char.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/non_repeating_char.c" name="tryy.c" stamp="1493886596108" updateReferences="true"/>
+</session>

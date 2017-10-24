@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+ Name        : FileIO.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ 1. C program to copy the contents of one file into another using fputc
+ 2. C Program to read last n characters from the file !
+ 3. C program to convert the file contents in Upper-case & Write Contents in a output file
+ 4. C Program to Compare two text/data files in C Programming
+ 5. C Program to Write on Data File and Read From Data File
+ 6. C Program to Copy Text From One File to Other File
+ 7. How to display same source code as output in c programming?*
+ ============================================================================
+ */
+/*1. C program to copy the contents of one file into another using fputc*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+/*	FILE *fp1, *fp2;
+	fp1 = fopen("file.txt", "r");
+	if (fp1 == NULL) {
+		printf("unable to open file");
+		exit(1);
+	}
+	fp2 = fopen("file1.txt", "a");
+	if (fp1 == NULL) {
+		printf("unable to open file1");
+		exit(1);
+	}
+	char c;
+
+	while ((c = fgetc(fp1)) != EOF) {
+		fputc(c, fp2);
+	}
+	fclose(fp1);
+	fclose(fp2);*/
+
+
+/*2. C Program to read last n characters from the file !*/
+
+	FILE *fp1;
+	int n = 10;
+	char ch;
+	fp1 = fopen("file.txt", "r");
+	if (fp1 == NULL) {
+			puts("cannot open this file");
+			exit(1);
+		}
+	fseek(fp1, 0, SEEK_END);
+	int pos = ftell(fp1);
+	int place = pos - n;
+	fseek(fp1, place, SEEK_CUR);
+	while ((ch = getc(fp1)) != '\0') {
+		printf("%c",ch);
+		putchar(ch);
+	}
+	fclose(fp1);
+	return 0;
+}

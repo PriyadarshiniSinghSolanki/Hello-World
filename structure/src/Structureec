@@ -1,0 +1,250 @@
+/*
+ * Structuree.c
+ *
+ *  Created on: 04-Sep-2017
+ *      Author: Sys-5304
+ */
+/*
+ ============================================================================
+ Name        : structure.c
+ Author      : Priyadarshini Singh Solanki
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ 1	C Program to read and print name and other details of 50 students using Structure?
+ 2	C Program to sort array of Structure in C Programming - Write a C program to accept records of the different states using array of structures.
+ 	 The structure should contain char state, population, literacy rate, and income.
+ 	 Display the state whose literacy rate is highest and whose income is highest.
+ 3	C program to use structure within union & display the contents of structure elements
+ 4	C Program to Calculate Size of Structure using Sizeof Operator
+ 5	Sorting Two Structures on the basis of any structure element and Display Information
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TOTAL_NUM 2
+
+struct Student {
+	int serial;
+	char name[25];
+	char subject[10];
+	int marks[3];
+} S1[TOTAL_NUM];
+struct Student record[]={
+		{1,"Priya",{"English","Hindi","Maths","Science"},{20,30,40}},
+		{2,"Riya",{"English","Hindi","Maths","Science"},{90,80,70}},
+		{3,"Diya",{"English","Hindi","Maths","Science"},{60,50,40}},
+		{4,"Miya",{"English","Hindi","Maths","Science"},{90,20,50}}
+};
+#if 0
+int main(void) {
+
+	puts("!!!Enter Name of Student!!!");
+	fflush(stdout);
+	int i, j;
+	for (i = 1; i <= TOTAL_NUM; i++) {
+		/*gets(S1[i].serial);
+		 printf("%d\n", S1[i].serial);*/
+		fgets(S1[i].name, 25, stdin);
+		printf("%d. %s", i, S1[i].name);
+
+	}
+	for (i = 1; i <= TOTAL_NUM; i++) {
+		for (j = 1; j <= 3; j++) {
+			printf("enter Subject-%d marks obtained by student: %s", j,
+					S1[i].name);
+			fflush(stdout);
+			scanf("%d", &S1[i].marks[j]);
+		}
+	}
+	for (i = 1; i <= TOTAL_NUM; i++) {
+		int var = 0;
+		for (j = 1; j <= 3; j++) {
+			var = var + S1[i].marks[j];
+		}
+		printf("Sum of marks Obtained by %s is %d", S1[i].name, var);
+		fflush(stdout);
+	}
+	return 0;
+}
+
+/*Write a C program to accept records of the different states using array of structures.
+ The structure should contain char state, population, literacy rate, and income.
+ Display the state whose literacy rate is highest and whose income is highest.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TOTAL_STATE 2
+struct Info {
+	char state[30];
+	long int population;
+	int literacy_rate;
+	long int income;
+};
+
+int main() {
+	struct Info S1[TOTAL_STATE];
+	int i, lh, ih;
+	printf("Enter the state name: ");
+	fflush(stdout);
+	for (i = 1; i <= TOTAL_STATE; i++) {
+		fgets(S1[i].state, 30, stdin);
+	}
+	for (i = 1; i <= TOTAL_STATE; i++) {
+		printf("\nEnter population, literacy rate and income of %s - ",
+				S1[i].state);
+		fflush(stdout);
+		scanf("%ld", &S1[i].population);
+		scanf("%d", &S1[i].literacy_rate);
+		scanf("%ld", &S1[i].income);
+		fflush(stdout);
+		/*fgets(S1[i].population, 30, stdin);
+		 fgets(S1[i].literacy_rate, 10, stdin);
+		 fgets(S1[i].income, 10, stdin);*/
+	}
+	fflush(stdout);
+	int literacy_High = 0;
+	int income_High = 0;
+	for (i = 1; i <= TOTAL_STATE; i++) {
+		if (S1[i].literacy_rate > literacy_High) {
+			literacy_High = S1[i].literacy_rate;
+			lh = i;
+		}
+		if (S1[i].income > income_High) {
+			income_High = S1[i].income;
+			ih = i;
+		}
+	}
+	printf("Highest literacy rate is of %s and Highest Income is of %s ",
+			S1[lh].state, S1[ih].state);
+	return 0;
+}
+
+/*Create one Structure and declare it inside union.Then accept values for structure members and display them.*/
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TOTAL_STATE 2
+struct Info {
+	char state[30];
+	long int population;
+	int literacy_rate;
+	long int income;
+};
+union test {
+	struct Info S1[TOTAL_STATE];
+};
+
+int main() {
+	int i;
+	union test set;
+	for (i = 1; i <= 3; i++) {
+		scanf("%s", &set.S1[i].state);
+		scanf("%ld", &set.S1[i].population);
+		scanf("%d", &set.S1[i].literacy_rate);
+		scanf("%ld", &set.S1[i].income);
+		printf("state: %s\n", set.S1[i].state);
+		printf("population :%ld\n", set.S1[i].population);
+		printf("literacy_rate: %d\n", set.S1[i].literacy_rate);
+		printf("income: %ld\n", set.S1[i].income);
+		fflush(stdout);
+	}
+	for (i = 1; i <= 3; i++) {
+		printf("state: %s\n", set.S1[i].state);
+		printf("population :%ld\n", set.S1[i].population);
+		printf("literacy_rate: %d\n", set.S1[i].literacy_rate);
+		printf("income: %ld\n", set.S1[i].income);
+	}
+
+	return 0;
+}
+
+
+/*Program : Calculate Size of Structure in C Programming*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Info {
+	char state[2];
+	char population;
+	char literacy_rate;
+	int income;
+};
+
+int main() {
+   int size;
+   struct Info S1;
+   size = sizeof(S1);
+   printf("nSize of Structure : %d", size);
+   return(0);
+}
+Answer: 8, char-int-int-char:16,int-char-char-int:12
+
+
+/*Create one Structure and declare it inside union.Calculate Size of Structure and Union in C Programming*/
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TOTAL_STATE 2
+struct Info {
+	char state[2];
+	char population;
+	char literacy_rate;
+	int income;
+};
+union test {
+	struct Info S1[TOTAL_STATE];
+	char i[30];
+};
+
+int main() {
+	int sizeS, sizeU;
+	union test set;
+	sizeS = sizeof(set.S1);
+	sizeU = sizeof(set);
+	printf("nSize of Structure : %d\n", sizeS);
+	printf("nSize of Union : %d", sizeU);
+	return (0);
+}
+Answer:Structure : 16, Union : 32
+
+/*structure and function*/
+#include <stdio.h>
+struct student {
+	char *name;
+};
+struct student s;
+struct student fun(void) {
+	s.name = "newton";
+	printf("%s\n", s.name);
+	s.name = "alan";
+	return s;
+}
+void main() {
+	struct student m = fun();
+	printf("%s\n", m.name);
+	m.name = "turing";
+	printf("%s\n", s.name);
+}
+Answer: newton alan alan
+
+#include <stdio.h>
+struct student {
+	char *name;
+};
+void main() {
+	struct student s, m;
+	s.name = "st";
+	m = s;
+	printf("%s%s", s.name, m.name);
+}
+Answer: stst
+
+
+#endif
+
+

@@ -1,33 +1,35 @@
-
-
-
-/*
-Input : 5, 55
-Output: 55,47,94,86,172
-*/
-
-#include <math.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <assert.h>
-#include <limits.h>
-#include <stdbool.h>
-static void series (int n, int v);
-static void series (int n, int v){
-	v= v<<1;
+#include <string.h>
 
-	printf("%d",v);
-}
 int main() {
+	char *str1 = "helloheolhihelolhi";
+	char *str2 = "hel";
+	char *temp;
+	temp = str2;
+	int len1 = strlen(str1);
+	int len2 = strlen(str2);
+	static int cnt, b;
 
-    int i, n,v;
-    scanf("%d", &n);//5
-    printf("\nEnter the start number: ");//55
-    scanf("%d", &v);
+	while (len1) {
+		while ((*temp != '\0') && (*str1 == *temp)) {
+			str1++;
+			len1--;
+			temp++;
+			cnt++;
+		}
+		if ((cnt == len2) && (*temp == '\0')) {
+			b++;
+		} else {
+			str1++;
+			len1--;
+			cnt = 0;
+		}
 
-    series(n,v);
+		cnt = 0;
+		temp = str2;
 
-    return 0;
-
+	}
+	printf("%d", b);
+	return 0;
 }
